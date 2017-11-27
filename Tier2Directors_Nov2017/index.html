@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Tier-2 TWG Update</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>Tier 2 TWG: Update</h1>
+	<p>Andy Turner, EPCC<br/>
+	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
+	<img class="plain" src="img/epcc_logo.png"/>
+</section>
+
+<section>
+	<div class="lblock">
+		<img class="plain" src="img/tier2_logos.png"/>
+	</div>
+	<div class="rblock">
+		<img src="img/tier2-map.png" />
+	        <img width="300" class="plain" src="img/tier2_logo.jpg" />
+	</div>
+</section>
+
+<section>
+	<ul>
+		<li>Representation from each site (sometimes multiple representatives)
+		<ul style="font-size: 0.75em">
+			<li>Additional expertise drawn in as required</li>
+		</ul></li>
+		<li>Links to:
+		<ul style="font-size: 0.75em">
+			<li>ARCHER – via EPCC representatives</li>
+			<li>DiRAC – 2 members on both Tier-2 TWG and DiRAC TWG</li>
+			<li>HPC-SIG – Multiple TWG members are active in HPC-SIG</li>
+			<li>UK-RSE – Multiple TWG members active in UK-RSE</li>
+		</ul></li>
+		<li>8 meetings so far
+		<li>Moving to regular bi-weekly schedule</li>
+	</ul>
+</section>
+
+<section>
+	<h3>SAFE integration progress</h3>
+	<ul>
+		<li>Fully-integrated:
+		<ul style="font-size: 0.75em">
+			<li>Cirrus</li>
+			<li>HPC Midlands+</li>
+		</ul></li>
+		<li>In progress:
+		<ul style="font-size: 0.75em">
+			<li>CSD3 – already integrated for DiRAC</li>
+			<li>GW4 – available in SAFE, awaiting full system installation</li>
+			<li>JADE – already in Hartree SAFE, plan to exchange data between SAFEs</li>
+			<li>MMMHub – initial explorations</li>
+		</ul>
+	</ul>
+</section>
+
+<section>
+	<h3>TWG RSE Subgroup</h3>
+	<ul>
+		<li>Initial RSE meeting planned for early Dec 2017
+		<ul style="font-size: 0.75em">
+			<li>Introductions and discussion of technical assessment process,
+				agree topics for future discussion, discuss potential
+				face-to-face meeting</li>
+		</ul></li>
+		<li>A number of one-to-one meetings have already taken place</li>
+		<li>Will link into wider RSE community, <em>e.g.</em>:
+		<ul>
+			<li>UK RSE Leaders group</li>
+			<li>ARCHER CSE service</li>
+		</ul></li>
+	</ul>
+</section>
+
+<section>
+	<h3>TWG Data Subgroup</h3>
+	<ul>
+		<li>Initial topics:
+		<ul style="font-size: 0.75em">
+			<li>Understanding data workflow use cases</li>
+			<li>Proposing ways of using Tier-2 object store</li>
+			<li>Technologies for transferring data between sites – what common
+				technologies should sites support?</li>
+			<li>Enabling complex workflows that use multiple sites (and external resources)</li>
+		</ul></li>
+		<li>Led by Aaron Turner, Loughborough University</li>
+	</ul>
+</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
