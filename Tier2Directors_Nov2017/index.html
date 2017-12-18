@@ -6,19 +6,19 @@
 
 		<title>Tier-2 TWG Update</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
-		<link rel="stylesheet" href="css/local.css">
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -31,16 +31,16 @@
 	<h1>Tier 2 TWG: Update</h1>
 	<p>Andy Turner, EPCC<br/>
 	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
-	<img class="plain" src="img/epcc_logo.png"/>
+	<img class="plain" src="../img/epcc_logo.png"/>
 </section>
 
 <section>
 	<div class="lblock">
-		<img class="plain" src="img/tier2_logos.png"/>
+		<img class="plain" src="img_local/tier2_logos.png"/>
 	</div>
 	<div class="rblock">
-		<img src="img/tier2-map.png" />
-	        <img width="300" class="plain" src="img/tier2_logo.jpg" />
+		<img src="img_local/tier2-map.png" />
+	        <img width="300" class="plain" src="img_local/tier2_logo.jpg" />
 	</div>
 </section>
 
@@ -78,7 +78,7 @@
 			<li>MMMHub – initial explorations underway</li>
 		</ul>
 	</ul>
-	<img width="300" class="plain" src="img/safelogo.gif" />
+	<img width="300" class="plain" src="../img/safelogo.gif" />
 </section>
 
 <section>
@@ -130,8 +130,8 @@
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -139,10 +139,10 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
