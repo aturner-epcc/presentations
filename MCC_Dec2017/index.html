@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>MCC ARCHER Update: 20 Dec 2017</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>ARCHER Update</h1>
+	<p>Andy Turner, EPCC<br/>
+	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
+	<img class="plain" src="../img/epcc_logo.png"/>
+	<img class="plain" width="450" src="../img/ARCHER_logo.png"/>
+</section>
+
+<section>
+	<h2>MCC Use</h3>
+</section>
+
+<section>
+	<h3>Yearly Use Data</h3>
+
+	<table>
+		<tr>
+			<th>Year</th>
+			<th>Allocation</th>
+			<th>Use</th>
+		</tr>
+		<tr>
+			<td>2014</td>
+			<td>1,952,480</td>
+			<td>1,396,882</td>
+		</tr>
+		<tr>
+			<td>2015</td>
+			<td>2,084,855</td>
+			<td>2,581,184</td>
+		</tr>
+		<tr>
+			<td>2016</td>
+			<td>2,970,252</td>
+			<td>2,992,004</td>
+		</tr>
+		<tr>
+			<td>2017</td>
+			<td>2,601,670</td>
+			<td>2,560,397</td>
+		</tr>
+	</table>
+
+	<p>On track to use allocation and more in 2017</p>
+</section>
+
+<section>
+	<img class="plain" src="data/app_use.png"/>
+</section>
+
+<section>
+	<h3>Memory Use</h3>
+	<img class="plain" src="data/mem_use.png"/>
+</section>
+
+<section>
+	<h2>Benchmarking</h2>
+</section>
+
+<section>
+	<h3>Systems Included</h3>
+	<table style="font-size: 0.75em">
+		<tr>
+			<th>System</th>
+			<th>Processor</th>
+			<th>Interconnect</th>
+		</tr>
+		<tr>
+			<td>ARCHER</td>
+			<td>12-core IvyBridge, 2.7 GHz</td>
+			<td>Cray Aries</td>
+		</tr>
+		<tr>
+			<td>Cirrus@EPCC</td>
+			<td>18-core Broadwell, 2.1 GHz</td>
+			<td>FDR Hypercube</td>
+		</tr>
+		<tr>
+			<td>Thomas@MMMHub</td>
+			<td>12-core Broadwell, 2.1 GHz</td>
+			<td>OPA</td>
+		</tr>
+		<tr>
+			<td>Athena@HPC-Mid+</td>
+			<td>14-core Broadwell, 2.4 GHz</td>
+			<td>EDR</td>
+		</tr>
+		<tr>
+			<td>CSD3@Cambridge</td>
+			<td>16-core Skylake, 2.6 GHz</td>
+			<td>OPA</td>
+		</tr>
+	</table>
+</section>
+
+<section>
+	<h3>CASTEP: Al Slab (al3x3)</h3>
+	<img class="plain" src="img_local/castep_al3x3_perf.png"/>
+</section>
+
+<section>
+	<h3>GROMACS: large</h3>
+	<img class="plain" src="img_local/gromacs_large_perf.png"/>
+</section>
+
+<section>
+	<h3>OpenSBLI: Taylor-Green Vortex</h3>
+	<img class="plain" src="img_local/osbli_tgv_perf.png"/>
+</section>
+
+<section>
+	<h3>TWG Data Subgroup</h3>
+	<ul>
+		<li>Initial topics:
+		<ul style="font-size: 0.75em">
+			<li>Understanding data workflow use cases</li>
+			<li>Proposing ways of using Tier-2 object store</li>
+			<li>Technologies for transferring data between sites – what common
+				technologies should sites support?</li>
+			<li>Enabling complex workflows that use multiple sites (and external resources)</li>
+		</ul></li>
+		<li>Led by Aaron Turner, Loughborough University</li>
+	</ul>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
