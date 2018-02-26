@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>EPCC RSE Seminar</title>
+		<title>EPCC SC17 Seminar</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/night.css">
@@ -28,172 +28,214 @@
 
 <!-- Start of presentation ------------------------------------------------------------------------ -->
 <section>
-	<h2 class="glow">What's all this RSE stuff about?</h2>
+	<img src="img_local/sc17.jpg" />
 	<p>Andy Turner, EPCC<br/>
-	21 February 2018<br/>
+	28 February 2018<br/>
 	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
 	
 </section>
 
 <section>
-	<p class="glow">Research Software Engineers are people in a variety of roles who understand and care about both good software and good research.</p>
-	<p><a href="http://rse.ac.uk/what-is-an-rse/">http://rse.ac.uk/what-is-an-rse/</a></p>
+	<h2>HPC Carpentry</h2>
+
+	<p><a href="https://github.com/hpc-carpentry/hpc-intro">https://github.com/hpc-carpentry/hpc-intro</a></p>
+</section>
+
+
+<section>
+	<h3>HPC Carpentry at SC17</h3>
+	<p>Presentations and BoF to get community input and raise profile</p>
+	<p>
+		<span class="fragment">Target audience</span>
+		<span class="fragment"> &hellip; Curriculum</span>
+		<span class="fragment"> &hellip; Format and length</span>
+	</p>
+	<p class="fragment"><a href="https://hpc-uk.github.io/sc17-hpccarpentry-bof/">https://hpc-uk.github.io/sc17-hpccarpentry-bof/</a></p>
 </section>
 
 <section>
-	<h2>MCC Application Use</h3>
-	<p>2017 so far</p>
-</section>
-				
-<!--
-<section>
-	<h3>Yearly Use Data</h3>
-
-	<table>
-		<tr>
-			<th>Year</th>
-			<th>Allocation</th>
-			<th>Use</th>
-		</tr>
-		<tr>
-			<td>2014</td>
-			<td>1,952,480</td>
-			<td>1,396,882</td>
-		</tr>
-		<tr>
-			<td>2015</td>
-			<td>2,084,855</td>
-			<td>2,581,184</td>
-		</tr>
-		<tr>
-			<td>2016</td>
-			<td>2,970,252</td>
-			<td>2,992,004</td>
-		</tr>
-		<tr>
-			<td>2017</td>
-			<td>2,601,670</td>
-			<td>2,560,397</td>
-		</tr>
-	</table>
-
-	<p>On track to use allocation and more in 2017</p>
-</section>
--->
-
-<section>
-	<img class="plain" src="data/app_use.png"/>
+	<h3>What is HPC Carpentry?</h3>
+	<p class="fragment">Apply the Carpentry model for HPC training</p>
+	<p class="fragment">Open-source, community-designed training</p>
+	<p class="fragment">Easy to adapt for different systems</p>
+	<p class="fragment">Modular: tailor to different audiences</p>
 </section>
 
 <section>
-	<h3>Memory Use</h3>
-	<img class="plain" src="data/mem_use.png"/>
-</section>
+	<h3>Learner profile</h3>
 
-<section>
-	<h2>Benchmarking</h2>
-	<p>Initial results</p>
-	<p><a href="https://github.com/ARCHER-CSE/archer-benchmarks">https://github.com/ARCHER-CSE/archer-benchmarks</a></p>
-</section>
-
-<section>
-	<h3>Benchamrks</h3>
-	<ul style="font-size: 0.7em">
-		<li>Applications:
-			<ul>
-				<li>CASTEP: Al Slab (medium) and DNA (large)</li>
-				<li>CP2K: Hybrid functional, LiH</li>
-				<li>GROMACS: Large biological system</li>
-				<li>OpenSBLI: Taylor-Green vortex</li>
-				<li>OASIS: Coupled Met Office UM and NEMO</li>
-			</ul></li>
-		<li>Synthetic:
-			<ul>
-				<li>HPC Challenge (floating point, memory, interconnect)</li>
-				<li>benchio (parallel file system bandwidth)</li>
-				<li>mdtest (parallel file system metadata)</li>
-			</ul></li>
+	<ul style="font-size: 0.75em">
+		<li class="fragment">I do not have the basic technical skills to use HPC</li>
+		<li class="fragment">I am not sure how HPC can help my research?</li>
+		<li class="fragment">Just give me what I need to get on with my research on HPC</li>
+		<li class="fragment">What is an HPC system anyway? How does it differ from the computer I am already using? What about “the Cloud”?</li>
+		<li class="fragment">HPC and programming are awesome, but I do not know much, tell me more!</li>
+		<li class="fragment">How do I get help and/or help myself when I get stuck?</li>
+		<li class="fragment">I feel unsure and out of my depth with HPC</li>
+		<li class="fragment">I do not understand the shared nature of HPC systems</li>
+		<li class="fragment">I am experienced technically, what do I need to know about HPC?</li>
 	</ul>
 </section>
 
 <section>
-	<h3>Systems Included</h3>
-	<table style="font-size: 0.6em">
-		<tr>
-			<th>System</th>
-			<th>Processor</th>
-			<th>Memory</th>
-			<th>Interconnect</th>
-		</tr>
-		<tr>
-			<td>ARCHER</td>
-			<td>12-core Xeon v2, 2.7 GHz</td>
-			<td>4 channel DDR3</td>
-			<td>Cray Aries</td>
-		</tr>
-		<tr>
-			<td>Cirrus@EPCC</td>
-			<td>18-core Xeon v4, 2.1 GHz</td>
-			<td>4 channel DDR4</td>
-			<td>FDR Hypercube</td>
-		</tr>
-		<tr>
-			<td>Thomas@MMMHub</td>
-			<td>12-core Xeon v4, 2.1 GHz</td>
-			<td>4 channel DDR4</td>
-			<td>OPA</td>
-		</tr>
-		<tr>
-			<td>Athena@HPC-Mid+</td>
-			<td>14-core Xeon v4, 2.4 GHz</td>
-			<td>4 channel DDR4</td>
-			<td>EDR</td>
-		</tr>
-		<tr>
-			<td>CSD3@Cambridge</td>
-			<td>16-core Xeon Skylake, 2.6 GHz</td>
-			<td>6 channel DDR4</td>
-			<td>OPA</td>
-		</tr>
-	</table>
-</section>
-
-<section>
-	<strong>CASTEP: Al Slab (al3x3)</strong>
-	<img class="plain" src="img_local/castep_al3x3_perf.png"/>
-</section>
-
-<section>
-	<strong>GROMACS: large</strong>
-	<img class="plain" src="img_local/gromacs_large_perf.png"/>
-</section>
-
-<section>
-	<strong>OpenSBLI: Taylor-Green Vortex</strong>
-	<img class="plain" src="img_local/osbli_tgv_perf.png"/>
-</section>
-
-<section>
-	<h4>Future Work</h4>
-	<ul>
-		<li>Include non-CPU systems (GPGPU: JADE, CSD3-GPU; KNL: CSD3-KNL)</li>
-		<li>Include ARM64 Isambard@GW4 once it is available</li>
-		<li>Profile benchmarks to get better understanding of performance differences</li>
-		<li>Generate results for synthetic benchmarks to understand differences between systems</li>
-		<li>Produce initial report comparing systems and benchmarks</li>
+	<h3>Curriculum</h3>
+	<ul style="font-size: 0.75em">
+		<li class="fragment">Why use HPC?</li>
+		<li class="fragment">Login, interactive access (ssh); transferring data (scp)</li>
+		<li class="fragment">Understanding HPC jargon</li>
+		<li class="fragment">Basic understanding of HPC architectures and practical implications for their use</li>
+		<li class="fragment">File systems on HPC systems</li>
+		<li class="fragment">In-terminal text editors</li>
+		<li class="fragment">modules, environment, applications</li>
+		<li class="fragment">The batch system and writing job submission scripts</li>
+		<li class="fragment">Shared system etiquette</li>
+		<li class="fragment">Troubleshooting strategies</li>
 	</ul>
 </section>
 
 <section>
-	<h3>Acknowledgements</h3>
+	<h3>Coordinators</h3>
 
-	<ul>
-		<li>SAFE development team: integration of application and memory data</li>
-		<li>Tier-2 centres: generous donation of time and willingness to share results publicly</li>
-		<li>Research councils: funding CSE team to undertake this work</li>
+	<div style="font-size: 0.4em; display: block; float: left; width: 300px">
+		<img width="200" src="img_local/turner.jpg" /><br />
+	   Andy Turner, EPCC
+	</div>
+	<div style="font-size: 0.4em; display: block; float: left; width: 300px">
+		<img width="200" src="img_local/koch.jpg" /><br />
+	   Christina Koch, U of Wisconsin-Madison
+	</div>
+	<div style="font-size: 0.4em; display: block; float: left; width: 300px">
+		<img width="200" src="img_local/callaghan.jpg" /><br />
+	   Martin Callaghan, U of Leeds
+	</div>
+	<div style="font-size: 0.4em; display: block; float: left; width: 300px">
+		<img width="200" src="img_local/freeman.jpg" /><br />
+	   Bob Freeman, Harvard Business School
+	</div>
+	<div style="font-size: 0.4em; display: block; float: left; width: 300px">
+		<img width="200" src="img_local/bording.jpg" /><br />
+	   Chris Bording, IBM Research
+	</div>
+	<div style="font-size: 0.4em; display: block; float: left; width: 300px">
+		<img width="200" src="img_local/teal.jpg" /><br />
+	   Tracy Teal, Data Carpentry
+	</div>
+</section>
+
+<section>
+	<h2>HPC Vendor Trends</h2>
+	<div class="fragment">
+	  <img width="400" src="img_local/gorilla.gif" />
+	  <p>i.e. what to do about the 500 lb Intel gorilla?</p>
+	</div>
+</section>
+
+<section>
+	<h3>Intel issues?</h3>
+	<p class="fragment"><strong>Little competition for processors&hellip;</strong></p>
+	<p class="fragment">&hellip;high cost, low innovation</p>
+	<p class="fragment"><strong>OPA interconnect can be provided at a loss&hellip;</strong></p>
+	<p class="fragment">&hellip;Intel can act as kingmaker in procurements and kill other interconnects</p>
+</section>
+
+<section>
+	<h3>Vendor approaches</h3>
+	<p>Aggressively back other processors and build your own interconnect</p>
+	<p>Support range of processors, create flexible interconnect standard</p>
+	<img src="img_local/they_will_come.gif" />
+</section>
+
+<section>
+	<h3>Other processors: ARM64, Cavium ThunderX2</h3>
+	<p><strong>Aims:</strong></p>
+	<ul style="font-size: 0.75em; float:left">
+	   <li>Beat Intel on cost</li>
+	   <li>Get close to FP performance and beat them on memory bandwidth</li>
 	</ul>
+	<p><strong>Concerns:</strong></p>
+	<ul style="font-size: 0.75em; float:left">
+		<li>Compiler support</li>
+		<li>Libraries and drivers</li>
+		<li>Limited support for vector instructions</li>
+		<li>Longevity of product line?</li>
+	</ul>
+</section>
 
-	<h4>Questions?</h4>
+<section>
+	<h3>Other processors: AMD EPYC, (Naples, Rome)</h3>
+	<p><strong>Aims:</strong></p>
+	<ul style="font-size: 0.75em; float:left">
+	   <li>Beat Intel on cost</li>
+	   <li>Get close to FP performance and beat them on memory bandwidth</li>
+	</ul>
+	<p><strong>Concerns:</strong></p>
+	<ul style="font-size: 0.75em; float:left">
+		<li>NUMA has a huge impact on performance</li>
+		<li>Believibility of product roadmap?</li>
+	</ul>
+</section>
+
+<section>
+	<h3>What about GPUs?</h3>
+	<p class="fragment">Only really Nvidia at the moment</p>
+	<div class="fragment">
+	   <p>Due to popularity for ML/AI the cost is very high</p>
+	   <img width="400" src="img_local/deep_learning.gif" />
+	</div>
+</section>
+
+
+<section>
+	<h2>RSE Careers</h2>
+	<img width="200" src="img_local/rse.png" />
+        <p><a href="http://www.rse.ac.uk">http://www.rse.ac.uk</a></p>
+</section>
+
+<section>
+	<p>
+	Many people in research organizations around the world combine expertise in programming with an intricate understanding of research. Although this combination of skills is extremely valuable, these people often lack a formal career path, particularly in the academic system. There is no easy way to recognise their contributions, reward them, or represent their views.
+	</p>
+	<p>These people are <em>Research Software Engineers</em>.</p>
+</section>
+
+<section>
+        <p>The term RSE began in the UK but is now becoming recognised and adopted internationally.</p>
+	<p>SC17 marked its first appearence as a well-understood term at a major US conference.</p>
+	<p>Presentations and discussions on challenges for RSEs in the US.</p>
+	<p><a href="https://softwaresaved.github.io/sc17-software-careers/">https://softwaresaved.github.io/sc17-software-careers/</a></p>
+</section>
+
+<section>
+	<h3>Key points</h3>
+
+	<ul style="font-size: 0.75em">
+		<li class="fragment">Career evaluation structures need to be changed to match RSE careers better (i.e. not just publication-based)</li>
+		<li class="fragment">Appropriate career progression structures need to be put in place - should be support for technical advancement, not just managerial</li>
+		<li class="fragment">Recognise value of research software and its development on a par with research outputs</li>
+		<li class="fragment">Too many terms for these people at the moment - not everyone is happy with the adoption of <em>RSE</em> - but nobody can come up with 
+			a better alternative</li>
+		<li class="fragment">Large-scale facilities often provide a way of supporting RSE-type staff but can hide their contribution from the 
+			institutions that use the facilities</li>
+	</ul>
+</section>
+
+<section>
+	<p>Supporting RSE careers in one word:</p>
+	<div class="fragment">
+		<p><strong>Recognition</strong></p>
+	        <img width="900" src="img_local/recognition.jpg" />
+	</div>
+</section>
+
+<section>
+	<h3>RSE around the world</h3>
+
+	<img src="img_local/RSE_international.png" />
+
+</section>
+
+<section>
+	<h2>Questions?</h2>
 </section>
 
 			</div>
@@ -207,6 +249,7 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
 				dependencies: [
 					{ src: '../plugin/markdown/marked.js' },
 					{ src: '../plugin/markdown/markdown.js' },
