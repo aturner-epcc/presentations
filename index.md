@@ -2,7 +2,7 @@
 
 ## 2018
 
-* [EPCC SC17 Debrief, 28 Feb 2018](EPCC_RSE_Feb2018)
+* [EPCC SC17 Debrief, 28 Feb 2018](EPCC_SC17_Mar2018)
 
 ## 2017
 
