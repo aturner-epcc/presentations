@@ -2,7 +2,7 @@
 
 ## 2018
 
-* [EPCC SC17 Debrief, 28 Feb 2018](EPCC_SC17_Mar2018)
+* [HPC@Sheffield, 26 Mar 2018](HPCSheff_Mar2018)
 
 ## 2017
 
