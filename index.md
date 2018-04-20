@@ -2,6 +2,7 @@
 
 ## 2018
 
+* [ARCHER Champions, 25 Apr 2018](ARCHER_Champions_Apr2018)
 * [HPC@Sheffield, 26 Mar 2018](HPCSheff_Mar2018)
 
 ## 2017

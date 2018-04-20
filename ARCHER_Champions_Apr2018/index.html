@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>MCC ARCHER Update: 20 Dec 2017</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>Cirrus RSE Update</h1>
+	<p>Andy Turner, EPCC<br/>
+	25 April 2018<br/>
+	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
+	
+	<img class="plain" width="600" src="../img/cirrus_logo.png"/>
+</section>
+
+<section>
+	<h3>Cirrus RSE Update</h3>
+	<ul style="font-size: 0.7em">
+		<li>Supporting user requests: software installations, technical help, etc.</li>
+		<li>Comparative benchmarking across ARCHER and Tier2 systems
+			<ul>
+				<li>Initial focus on CPU-based systems</li>
+				<li>Synthetic benchmarks: HPC Challenge, parallel file system performance (MDS and bandwidth)</li>
+				<li>HPC application benchmarks: CASTEP, GROMACS, OpenSBLI (CFD)</li>
+	        	</ul></li>
+		<li>Installation and configuration of ISV sofware and licences</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Benchmarking</h2>
+	<p>Initial results</p>
+	<p><a href="https://github.com/ARCHER-CSE/archer-benchmarks">https://github.com/ARCHER-CSE/archer-benchmarks</a></p>
+	<p>Initial white paper currently under review</p>
+</section>
+
+<section>
+	<h3>Benchamrks</h3>
+	<ul style="font-size: 0.7em">
+		<li>Applications:
+			<ul>
+				<li>CASTEP: Al Slab (medium) and DNA (large)</li>
+				<li>CP2K: Hybrid functional, LiH</li>
+				<li>GROMACS: Large biological system</li>
+				<li>OpenSBLI: Taylor-Green vortex</li>
+				<li>OASIS: Coupled Met Office UM and NEMO</li>
+			</ul></li>
+		<li>Synthetic:
+			<ul>
+				<li>HPC Challenge (floating point, memory, interconnect)</li>
+				<li>benchio (parallel file system bandwidth)</li>
+				<li>mdtest (parallel file system metadata)</li>
+			</ul></li>
+	</ul>
+</section>
+
+<section>
+	<h3>Systems Included</h3>
+	<table style="font-size: 0.6em">
+		<tr>
+			<th>System</th>
+			<th>Processor</th>
+			<th>Memory</th>
+			<th>Interconnect</th>
+		</tr>
+		<tr>
+			<td>ARCHER</td>
+			<td>12-core Xeon v2, 2.7 GHz</td>
+			<td>4 channel DDR3</td>
+			<td>Cray Aries</td>
+		</tr>
+		<tr>
+			<td>Cirrus@EPCC</td>
+			<td>18-core Xeon v4, 2.1 GHz</td>
+			<td>4 channel DDR4</td>
+			<td>FDR Hypercube</td>
+		</tr>
+		<tr>
+			<td>Thomas@MMMHub</td>
+			<td>12-core Xeon v4, 2.1 GHz</td>
+			<td>4 channel DDR4</td>
+			<td>OPA</td>
+		</tr>
+		<tr>
+			<td>Athena@HPC-Mid+</td>
+			<td>14-core Xeon v4, 2.4 GHz</td>
+			<td>4 channel DDR4</td>
+			<td>EDR</td>
+		</tr>
+		<tr>
+			<td>CSD3@Cambridge</td>
+			<td>16-core Xeon Skylake, 2.6 GHz</td>
+			<td>6 channel DDR4</td>
+			<td>OPA</td>
+		</tr>
+	</table>
+</section>
+
+<section>
+	<strong>CASTEP: Al Slab (al3x3)</strong>
+	<img class="plain" src="img_local/castep_al3x3perf.png"/>
+</section>
+
+<section>
+	<strong>GROMACS: large</strong>
+	<img class="plain" src="img_local/gromacs_large_perf.png"/>
+</section>
+
+<section>
+	<strong>OpenSBLI: Taylor-Green Vortex</strong>
+	<img class="plain" src="img_local/osbli_tgv_perf.png"/>
+</section>
+
+<section>
+	<h4>Future Work</h4>
+	<ul>
+		<li>Include non-CPU systems (GPGPU: JADE, CSD3-GPU; KNL: CSD3-KNL)</li>
+		<li>Include ML/DL benchmarks</li>
+		<li>Profile benchmarks to get better understanding of performance differences</li>
+	</ul>
+</section>
+
+
+<section>
+	<h2>Tier2 RSE Coordination</h2>
+	<img class="plain" src="../img/epcc_logo.png"/>
+	<img class="plain" width="450" src="../img/tier2_logo.jpg"/>
+</section>
+
+<section>
+	<ul style="font-size: 0.7em">
+		<li>EPCC have initiated a regular series of meetings between Tier2 RSE teams and ARCHER CSE</li>
+		<li>Initial focus:
+			<ul>
+				<li>Sharing experiences and approaches</li>
+				<li>Sharing introductory HPC training material</li>
+			</ul></li>
+		<li>Future plans:
+			<ul>
+				<li>Group involvement in RSE Leaders workshop submission for RSE2018</li>
+				<li>Sharing best practice and experience with DiRAC RSE group</li>
+				<li>Identifiy opportunities for cross-site collaborations</li>
+				<li>Face-to-face day-long workshop (potentially with DiRAC RSE group) for late 2018</li>
+			</ul></li>
+	</ul>
+</section>
+				
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
