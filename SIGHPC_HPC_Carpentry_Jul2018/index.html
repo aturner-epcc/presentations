@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HPC Carpentry:SIGHPC Webinar</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>HPC Carpentry</h1>
+	<p>Andy Turner: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a><br />
+	EPCC, The University of Edinburgh<br/>
+	30 July 2018</p>
+	<a href="http://www.carpentries.org"><img class="plain" width="400" src="img_local/TheCarpentries.png" /></a>
+	<a href="http://www.epcc.ed.ac.uk"><img class="plain" width="300" src="../img/epcc_logo.png"/></a>
+	
+</section>
+
+<section>
+
+	<img class="plain" src="../img/cc_licence.png"/>
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+	<h2>Coordinators/Maintainers:</h2>
+
+	<ul style="font-size: 0.7em">
+		<li>Bob Freeman, Harvard, USA</li>
+		<li>Christina Koch, University of Wisconsin, Madison, USA</li>
+		<li>Alan O'Cais, Juelich Supercomputing Centre, Germany</li>
+		<li>Alex Razoumov, Compute Canada</li>
+		<li>Jeff Sessions, Compute Canada</li>
+		<li>John Simpson, Compute Canada</li>
+		<li>Daniel Smith, MolSSI, USA</li>
+		<li>Peter Steinbach, Scionics, Germany</li>
+		<li>Andy Turner, EPCC, UK</li>
+	</ul>
+</section>
+
+<section>
+
+<section>
+	<h2>What is HPC Carpentry?</h2>
+</section>
+
+<section>
+	<h3>Goals</h3>
+	<p class="fragment">Apply the Carpentry model for HPC training</p>
+	<p class="fragment">Open-source, community-designed training</p>
+	<p class="fragment">Easy to adapt for different systems</p>
+	<p class="fragment">Modular: tailor to different audiences</p>
+</section>
+
+<section>
+	<h3>Initial learner profile</h3>
+
+	<ul style="font-size: 0.75em">
+		<li class="fragment">I am not sure how HPC can help my research?</li>
+		<li class="fragment">I do not have the basic technical skills to use HPC.</li>
+		<li class="fragment">Just give me what I need to get on with my research on HPC.</li>
+		<li class="fragment">What is an HPC system anyway? How does it differ from the computer I am already using? What about “the Cloud”?</li>
+		<li class="fragment">How do I get help and/or help myself when I get stuck?</li>
+		<li class="fragment">I feel unsure and out of my depth with HPC.</li>
+		<li class="fragment">I do not understand the shared nature of HPC systems.</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Topics</h3>
+	<ul style="font-size: 0.75em">
+		<li class="fragment">Why use HPC?</li>
+		<li class="fragment">Login and transferring data</li>
+		<li class="fragment">Understanding HPC jargon</li>
+		<li class="fragment">Basic understanding of HPC architectures and practical implications for their use</li>
+		<li class="fragment">File systems on HPC systems</li>
+		<li class="fragment">In-terminal text editors</li>
+		<li class="fragment">modules, environment, applications</li>
+		<li class="fragment">The scheduler and writing job submission scripts</li>
+		<li class="fragment">Shared system etiquette</li>
+		<li class="fragment">Troubleshooting strategies</li>
+	</ul>
+</section>
+
+<section>
+	<h3>What about the command line?</h3>
+
+	<p class="fragment">There has been a lot of discussion about this!</p>
+	<p class="fragment">It depends on the particular audience, whether this is needed or not</p>
+	<p class="fragment">Using a modular approach to add flexibility.</p>
+</section>
+</section>
+
+<section>
+<section>
+	<h2>Challenges</h2>
+</section>
+
+<section>
+	<h3>System differences</h3>
+
+	<ul style="font-size: 0.7em">
+		<li class="fragment">Need to be easy to incorporate with minimal editing</li>
+		<li class="fragment">Plan to do this automatically as much as possible</li>
+		<li class="fragment">Set a configuration option once and it will be built with the correct setup</li>
+		<li class="fragment">As the community grows, more system types will be available</li>
+		<li class="fragment">(Could also be used to provide different research community flavours of the material.)</li>
+	</ul>
+</section>
+
+</section>
+
+<section>
+	<h2>Questions?</h2>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
