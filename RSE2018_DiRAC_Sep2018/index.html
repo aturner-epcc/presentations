@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>The DiRAC RSE Group: RSE2018</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>The DiRAC RSE Group</h1>
+	<hr/>
+	3 August 2018</p>
+	Logos needed...
+	
+</section>
+
+<section>
+	<ul>
+		<li>Alexei Borissov: <a href="mailto:m.filipiak@epcc.ed.ac.uk">m.filipiak@epcc.ed.ac.uk</a>, The University of Edinburgh</li>
+		<li>Peter Boyle: <a href="mailto:m.filipiak@epcc.ed.ac.uk">m.filipiak@epcc.ed.ac.uk</a>, The University of Edinburgh</li>
+		<li>Sam Cox: <a href="mailto:m.filipiak@epcc.ed.ac.uk">m.filipiak@epcc.ed.ac.uk</a>, University of Leicester</li>
+		<li>Mark Filipiak: <a href="mailto:m.filipiak@epcc.ed.ac.uk">m.filipiak@epcc.ed.ac.uk</a>, EPCC, The University of Edinburgh</li>
+		<li>Jeffrey Salmond: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a>, University of Cambridge</li>
+		<li>Andy Turner: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a>, EPCC, The University of Edinburgh</li>
+		<li>Azusa Yamagouchi: <a href="mailto:m.filipiak@epcc.ed.ac.uk">m.filipiak@epcc.ed.ac.uk</a>, The University of Edinburgh</li>
+	</ul>
+</section>
+
+<section>
+
+	<img class="plain" src="../img/cc_licence.png"/>
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>DiRAC</h2>
+	</section>
+
+	<section>
+		<h3>Services</h3>
+	        <hr/>
+		<p class="fragment">Extreme Scaling</p>
+		<p class="fragment">Memory Intensive</p>
+		<p class="fragment">Data Intensive</p>
+	</section>
+
+	<section>
+		<h3>DiRAC RSE Group</h3>
+	        <hr/>
+		<ul style="font-size: 0.75em">
+			<li class="fragment">Distributed across the DiRAC sites</li>
+		</ul>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Threading in Phantom</h2>
+		<hr/>
+		<p>Sam Cox</p>
+	</section>
+
+	<section>
+		<h3>Phantom</h3>
+		<hr/>
+		<p class="smaller">PHANTOM is an efficient, low memory code for astrophysical fluid dynamics using the Smoothed Particle Hydrodynamics (SPH) technique</p>
+		<ul style="font-size: 0.75em">
+			<li>Fortran with OpenMP</li>
+			<li>Initial profiles revealed issues with threading efficiency in key part of the application</li>
+			<li>Implemented a tree distribution of work to improve performance</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Work distribution</h3>
+		<hr/>
+		<img class="plain" src="img_local/phantom_thread_dist.png" alt="Distributing threads in Phantom"/>
+	</section>
+
+	<section>
+		<h3>Thread utilisation</h3>
+		<hr/>
+		<img class="plain" src="img_local/phantom_threading.png" alt="Thread utilisation in Phantom"/>
+	</section>
+
+	<section>
+		<h3>Performance improvement</h3>
+		<hr/>
+		<img class="plain" src="img_local/phantom_perf.png" alt="Phantom performance improvement"/>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>EAGLE Physics in SWIFT</h2>
+		<hr/>
+		<p>Alexei Borissov</p>
+	</section>
+
+	<section>
+		<h3>The EAGLE Project</h3>
+		<hr/>
+		<div class="lblock">
+			<ul style="font-size: 0.75em">
+				<li>The <strong><u>EAGLE</u></strong> project involved some of the largest simulations of universe evolution using smoothed particle hydrodynamics (SPH) code Gadget2</li>
+				<li>EAGLE allowed detailed investigation of large variety of phenomena including galaxy formation, evolution, and interaction</li>
+				<li>(Motivation for this project?)</li>
+			</ul>
+
+		</div>
+		<div class="rblock">
+			<img class="plain" src="img_local/eagle.png" alt="The EAGLE simulation"/>
+		</div>
+	</section>
+
+	<section>
+		<h3>SWIFT</h3>
+		<hr/>
+		<div class="lblock">
+			<ul style="font-size: 0.75em">
+				<li><strong><u>SWIFT</u></strong> is a next-generation open-source SPH cosmology code designed to exploit modern algorithms and parallelisation techniques</li>
+				<li>It is significantly faster (up to 30x when running only hydrodynamics) than code used to run EAGLE, and shows good strong scaling to 200 000 cores, allowing larger simulations, or greater resolution.</li>
+				<li>Designed to be modular with regards to subgrid physics implementation, allowing wide range of simulations - from planet scale to universe scale</li>
+				<li>Image is final snapshot of dark matter only simulation run with SWIFT using 4.5 × 108 particles in an 800Mpc box. Simulation run from early universe to present took 75 hours on 28 cores (1 node), representing a speedup of 8.5x over Gadget2</li>
+			</ul>
+		</div>
+		<div class="rblock">
+			<img class="plain" src="img_local/swift_dark_matter.png" alt="SWIFT dark matter simulation"/>
+		</div>
+	</section>
+
+	<section>
+		<h3>EAGLE Physics in SWIFT</h3>
+		<hr/>
+		<ul style="font-size: 0.75em">
+			<li>Implementation of subgrid physics from EAGLE in SWIFT, including cooling, star formation, stellar feedback, chemical enrichment, black hole formation and feedback</li>
+			<li>Appropriate functions need to be adapted from EAGLE or written in order to implement each of these phenomena within SWIFT</li>
+			<li>Automated tests and documentation for each are also required</li>
+			<li>Currently cooling has been implemented and automated tests have been written</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Cooling</h3>
+		<hr/>
+		<div class="lblock">
+			<ul style="font-size: 0.75em">
+				<li>Cooling rate of a particle depends on: internal energy, redshift, hydrogen number density, helium fraction, metallicity</li>
+				<li>Rates are stored in 4D tables which are interpolated to obtain cooling rate for single particle</li>
+				<li>An improved integration scheme to evolve internal energy, based on the Newton-Raphson method was implemented to reduce number of table lookups (as opposed to bisection method in EAGLE)</li>
+				<li>Tests were written to confirm cooling rate is read correctly from tables and to ensure cooling of uniform box of gas is performed correctly by comparing with subcycled explicit solution</li>
+			</ul>
+		</div>
+		<div class="rblock">
+			<img class="plain" width="300" src="img_local/cooling_elements.png" alt="Contribution to cooling by element"/>
+			<img class="plain" width="270" src="img_local/cooling_uniform.png" alt="Cooling of uniform gas"/>
+		</div>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Optimisation of Gandalf</h2>
+		<hr/>
+		<p>Mark Filipiak</p>
+	</section>
+
+	<section>
+		<h3>GANDALF</h3>
+		<hr/>
+
+		<p class="smaller">GANDALF is an astrophysical hydrodynamics/N-body dynamics code for star formation, planet formation, and star cluster problems.  C++, MPI, OpenMP</p>
+
+		<ul style="font-size: 0.75em">
+			<li>Most time-consuming routine (calculating forces - computationally intensive) does not use vectorisation</li>
+			<li>Next most time-consuming routines (finding neighbouring particles) are memory limited – increased cache use should improve performance</li>
+			<li>OpenMP scaling is expected to be good</li>
+			<li>MPI scaling suffers from load imbalance</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Initial investigations</h3>
+		<hr/>
+		<p class="smaller">Measuring performance using the Intel performance tools:  Advisor (vectorisation), VTune Amplifier (cache use, OpenMP scaling)</p>
+		<ul style="font-size: 0.75em">
+			<li>Intel performance tools help you focus on the code hotspots but provide a lot of information which can be difficult to interpret</li>
+			<li>Always measure performance to decide optimisation strategy - the most time-consuming routine actually needs cache use improved as well as vectorisation</li>
+			<li>OpenMP scaling within a socket is confounded by effects that depend on the number of cores being used:  usable memory bandwidth and Turbo Boost</li>
+		</ul>
+		<p class="smaller">Next step: use Trace Analyser and Collector to measure MPI performance</p>
+
+	</section>
+
+	<section>
+		<h3>Single node scaling</h3>
+		<hr/>
+
+		<img class="plain" width="750" src="img_local/gandalf_node_scaling.png" alt="Scaling of Gandalf code within a single node"/>
+
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Staggered Fermion Performance of Grid on KNL</h2>
+		<hr/>
+		<p>Azusa Yamagouchi</p>
+	</section>
+
+	<section>
+		<h3>Grid QCD Software</h3>
+		<hr/>
+		<ul style="font-size: 0.75em">
+			<li>Key Quantum Chromodynamics simulation program. Theoretical support for discovery at LHC and beyond.</li>
+			<li>Understand the strong force binding quarks in hadrons How are protons, neutrons, mesons built out of quarks.</li>
+			<li>MCMC evaluation of Feynman path integral for QCD.</li>
+		</ul>
+		<p class="smaller">Optimise performance of staggered fermion treatement within Grid on multi-node KNL platform
+		to support major UK QCD project on CSD3 system at Cambridge. Research internationally connected to DOE funded
+		USQCD and MILC, HPQCD and Fermilab collaborations.</p>
+	</section>
+
+	<section>
+		<h3>DiRAC operator on KNL</h3>
+		<hr/>
+		<ul style="font-size: 0.75em">
+			<li>Multiple right hand side solver: apply same PDE matrix to many solves at once to enhance cache reuse:
+			<ul>
+				<li>Single and double precision on single node</li>
+			</ul></li>
+			<li>first KNL implementation that works on multiple nodes</li>
+			<li>BlockCG: share Krylov space search directions across many solves: 1000 iterations -> 221 iterations for 8 RHS</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Performance gains</h3>
+		<hr/>
+		<ul style="font-size: 0.75em">
+			<li>New algorithm yields both:
+			<ul>
+				<li>Higher flop rate: due to more efficient cache reuse</li>
+				<li>Lower flop count: due to solving multiple RHS simultaneously</li>
+			</ul></li>
+			<li>Combined improvements give a 7x improvement in time to solution on a single node. e.g.:
+			<ul>
+				<li>1.2s for 1 RHS</li>
+				<li>1.4s for 8 RHS</li>
+			</ul></li>
+			</li>
+		</ul>
+		<p class="smaller">Also worked to push these improvements into the US MILC QCD software but this has
+		been hampered by software moderators requiring work beyond the scope of this project before incorporation.
+		UK researchers using the development branch of MILC to access improvements for their work.</p>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Optimisation of Baidu ML using ideas from QCD</h2>
+		<hr/>
+		<p>Peter Boyle and Guido Cossau</p>
+	</section>
+
+	<section>
+		<h3>What do QCD and ML have in common?</h3>
+		<hr/>
+		<p>Both require best bandwidth from Infiniband interconnect</p>
+		<p>What is stopping applications accessing wire performance on Infiniband (for large messages)?</p>
+		<p class="smaller fragment">Not enough work to saturate the links from single MPI thread</p>
+		<p class="smaller fragment">Overheads associated with page faults</p>
+	</section>
+
+	<section>
+		<h3>How can we achieve best BW on Infiniband?</h3>
+		<hr/>
+
+		<p class="smaller fragment">Use hugepages to reduce number of potential page faults</p>
+		<p class="smaller fragment">(Note Transparent hugepages are not generally enough as Linux virtual memory gets fragmented over time and transparent hugepages do not guarantee concurrency. Must configure reserved huge pages at boot time. On x86 processors, since 1985, the time to read a page has decreased by 4000x but the number of pages has increased by 100,000x with the page size staying constant at 4KB.) 
+
+		<p class="samller fragment">Have multiple MPI communicators running on separate threads to saturate the interconnect BW</p>
+	</section>
+
+	<section>
+		<h3>What did this actually entail in practice?</h3>
+		<hr/>
+
+		<p class="smaller fragment">Collaboration with MPI library developers to implement multithreaded requirements properly</p>
+		<p class="smaller fragment">Collaboration with system administrators to enable reservation and allocation of hugepages by users</p>
+		<p class="smaller fragment">Modification of the Baidu code to allocate memory through hugepages and implement MPI communicators on multiple threads</p>
+	</section>
+
+	<section>
+		<h3>Performance gains</h3>
+		<hr/>
+		<div class="lblock">
+		<p>Increased %age of wire BW achieved (in QCD and Baidu) to 80-90% from </p>
+		<p>Leads to 4-10x increase in actual application performance</p>
+		<p><a href="https://arxiv.org/pdf/1711.04883.pdf">https://arxiv.org/pdf/1711.04883.pdf</a></p>
+		</div>
+		<div class="rblock">
+			<img class="plain" src="img_local/baidu_perf.png" alt="Interconnect performance for Baidu research ML code"/>
+		</div>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Management</h2>
+		<hr/>
+		<p>Andy Turner</p>
+	</section>
+
+	<section>
+		<h3>The good, the bad and the ugly</h3>
+		<hr/>
+		<img class="plain" width="200" src="img_local/clint.gif"/>
+		<ul style="font-size: 0.75em">
+			<li>Diversity of approaches and expertise</li>
+			<li>Natural delegation to leads at each site mitigates single points of failure and bottlenecks</li>
+			<li>Detailed technical discussion is more difficult</li>
+			<li>Fewer opportunities for ad hoc discussion and sharing of information</li>
+			<li>JISC Vscene has proven the best technology for regular meetings as people can connect online or by phone</li>
+			<li>RSE requests overseen and awarded by science panel which has led to poor estimates of RSE effort required for some projects</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Things can only get better</h3>
+		<hr/>
+		<img class="plain" width="400" src="img_local/brianc.gif"/>
+		<ul style="font-size: 0.75em">
+			<li>Biannual face-to-face day-long meetings</li>
+			<li>Improve technical specification of projects and oversight before funding</li>
+			<li>Potential to allow researchers to use DiRAC RSE to fund people outwith the core team with specific expewrtise</li>
+			<li>Improve the process for assigning RSEs to provide technical reviews of DiRAC project proposals</li>
+		</ul>
+	</section>
+
+</section>
+
+<section>
+	<h2>Questions?</h2>
+
+	<hr/>
+	<p><a href="https://www.dirac.ac.uk">https://www.dirac.ac.uk</a></p>
+	<p style="font-size: 0.6em"><a href="https://aturner-epcc.github.io/presentations/RSE2018_DiRAC_Sep2018/">https://aturner-epcc.github.io/presentations/RSE2018_DiRAC_Sep2018/</a></p>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
