@@ -2,6 +2,7 @@
 
 ## 2018
 
+* [RSE2018 Presentation on Benchmarking, 5 Sep 2018](RSE2018_Benchmarking_Sep2018)
 * [RSE2018 Presentation on DiRAC RSE group, 4 Sep 2018](RSE2018_DiRAC_Sep2018)
 * [SIGHPC Webinar on HPC Carpentry, 30 Jul 2018](SIGHPC_HPC_Carpentry_Jul2018)
 * [ARCHER Champions, 25 Apr 2018](ARCHER_Champions_Apr2018)
