@@ -22,6 +22,9 @@ p.breadcrumb {
 p.note {
    font-size: 0.5em;
 }
+p.smaller {
+   font-size: 0.75em;
+}
 div.rblock {
    float: right;
    display: block;
