@@ -30,14 +30,13 @@
 <section>
 	<h1>The DiRAC RSE Group</h1>
 	<hr/>
-	3 August 2018</p>
-	Logos needed...
-	
+	<p class="smaller">3rd Conference of Research Software Engineering, Birmingham<br/>
+	4 September 2018</p>
 </section>
 
 <section>
 	<ul style="font-size: 0.65em">
-		<li>Alexei Borissov: <a href="mailto:ab325@st-andrews.ac.uk">ab325@st-andrews.ac.uk</a>, The University of Edinburgh</li>
+		<li>Alexei Borissov: <a href="mailto:alexei.borissov@ed.ac.uk">alexei.borissov@ed.ac.uk</a>, The University of Edinburgh</li>
 		<li>Peter Boyle: <a href="mailto:paboyle@ed.ac.uk">paboyle@ed.ac.uk</a>, The University of Edinburgh</li>
 		<li>Sam Cox: <a href="mailto:sc676@leicester.ac.uk">sc676@leicester.ac.uk</a>, University of Leicester</li>
 		<li>Mark Filipiak: <a href="mailto:m.filipiak@epcc.ed.ac.uk">m.filipiak@epcc.ed.ac.uk</a>, EPCC, The University of Edinburgh</li>
@@ -45,6 +44,11 @@
 		<li>Andy Turner: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a>, EPCC, The University of Edinburgh</li>
 		<li>Azusa Yamagouchi: <a href="mailto:ayamaguc@exseed.ed.ac.uk">ayamaguc@exseed.ed.ac.uk</a>, The University of Edinburgh</li>
 	</ul>
+	<img style="padding: 0 20px" class="plain" height="75" src="../img/edinburgh_logo.png"/>
+	<img style="padding: 0 20px" class="plain" height="75" src="../img/epcc_logo.png"/>
+	<img style="padding: 0 20px" class="plain" height="75" src="../img/durham_logo.png"/>
+	<img style="padding: 0 20px" class="plain" height="75" src="../img/leicester_logo.png"/>
+	<img style="padding: 0 20px" class="plain" height="75" src="../img/cambridge_logo.jpg"/>
 </section>
 
 <section>
@@ -73,21 +77,43 @@
 	</section>
 
 	<section>
-		<h3>Services</h3>
+		<p><q>DiRAC is the integrated supercomputing facility for theoretical modelling and HPC-based research in particle physics, and astrophysics, cosmology, and nuclear physics, all areas in which the UK is world-leading. DiRAC provides a variety of compute resources, matching machine architecture to the algorithm design and requirements of the research problems to be solved.</q></p>
+		<p class="smaller"><a href="https://www.dirac.ac.uk">https://www.dirac.ac.uk</a></p>
+	</section>
+
+	<section>
+		<h3>DiRAC HPC Systems</h3>
 	        <hr/>
-		<p class="fragment">Extreme Scaling</p>
-		<p class="fragment">Memory Intensive</p>
-		<p class="fragment">Data Intensive</p>
+		<div class="lblock">
+			<ul>
+				<li class="fragment"><strong>Extreme Scaling@Edinburgh</strong>: Large amounts of compute cores connected by very high-bandwidth interconnect</li>
+				<li class="fragment"><strong>Memory Intensive@Durham</strong>: Large memory nodes with high-performance interconnect</li>
+				<li class="fragment"><strong>Data Intensive@Cambrige, Leicester</strong>: Variety of different advanced computing technologies</li>
+			</ul>
+		</div>
+		<div class="rblock">
+			<img class="plain" src="img_local/tesseract_cabs.jpg" alt="Tesseract cabinets"/>
+		</div>
 	</section>
 
 	<section>
 		<h3>DiRAC RSE Group</h3>
 	        <hr/>
+		<p>Started formally in late 2017. 3.5 FTE technical effort distributed across the DiRAC</p>
 		<ul style="font-size: 0.75em">
-			<li class="fragment">Distributed across the DiRAC sites</li>
+			<li class="fragment">Edinburgh: 1.5 FTE (+ RSE managment effort)</li>
+			<li class="fragment">Durham: 1.0 FTE</li>
+			<li class="fragment">Leicester: 0.5 FTE</li>
+			<li class="fragment">Cambridge: 0.5 FTE</li>
 		</ul>
+		<p class="smaller fragment">Researchers apply for RSE effort through peer-reviewed applications for
+		improvements linked directly to the funded research project</p>
 	</section>
 
+</section>
+
+<section>
+	<h2>RSE Projects</h2>
 </section>
 
 <section>
@@ -132,6 +158,66 @@
 <section>
 
 	<section>
+		<h2>Optimisation of Baidu ML using ideas from QCD</h2>
+		<hr/>
+		<p>Peter Boyle and Guido Cossau</p>
+	</section>
+
+	<section>
+		<h3>What do QCD and ML have in common?</h3>
+		<hr/>
+		<p class="smaller fragment">Both require best bandwidth from Infiniband interconnect</p>
+		<p class="smaller fragment">What is stopping applications accessing wire performance on Infiniband?</p>
+		<ul style="font-size: 0.75em">
+			<li class="smaller fragment">Not enough work to saturate the links from single MPI thread</li>
+			<li class="smaller fragment">Overheads associated with page faults</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>How can we achieve best BW on Infiniband?</h3>
+		<hr/>
+
+		<ul style="font-size: 0.75em">
+			<li class="fragment">Use hugepages to reduce number of potential page faults
+			<ul>
+				<li class="fragment">Transparent hugepages are not generally enough as Linux virtual
+					memory gets fragmented over time and transparent hugepages do not guarantee concurrency&hellip;</li>
+				<li class="fragment">&hellip;must configure reserved huge pages at boot time.</li>
+				<li class="fragment">On x86 processors, since 1985, the time to read a page has decreased by 4000x but
+					the number of pages has increased by 100,000x with the page size staying constant at 4KB.</li>
+			</ul></li>
+			<li class="fragment">Have multiple MPI communicators running on separate threads to saturate the interconnect BW</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>What did this actually entail in practice?</h3>
+		<hr/>
+
+		<p class="smaller fragment">Collaboration with MPI library developers to implement multithreaded requirements properly</p>
+		<p class="smaller fragment">Collaboration with system administrators to enable reservation and allocation of hugepages by users</p>
+		<p class="smaller fragment">Modification of the Baidu code to allocate memory through hugepages and implement MPI communicators on multiple threads</p>
+	</section>
+
+	<section>
+		<h3>Performance gains</h3>
+		<hr/>
+		<div class="lblock">
+		<p>Increased %age of wire BW achieved to 80-90% from 15%</p>
+		<p>Leads to 4-10x increase in actual application performance</p>
+		<p><a href="https://arxiv.org/pdf/1711.04883.pdf">https://arxiv.org/pdf/1711.04883.pdf</a></p>
+		</div>
+		<div class="rblock">
+			<img class="plain" src="img_local/baidu_perf.png" alt="Interconnect performance for Baidu research ML code"/>
+		</div>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
 		<h2>EAGLE Physics in SWIFT</h2>
 		<hr/>
 		<p>Alexei Borissov</p>
@@ -144,9 +230,13 @@
 			<ul style="font-size: 0.75em">
 				<li>The <strong><u>EAGLE</u></strong> project involved some of the largest simulations of universe evolution using smoothed particle hydrodynamics (SPH) code Gadget2</li>
 				<li>EAGLE allowed detailed investigation of large variety of phenomena including galaxy formation, evolution, and interaction</li>
-				<li>(Motivation for this project?)</li>
 			</ul>
-
+			<p class="fragment">Why move to SWIFT?</p>
+			<ul style="font-size: 0.75em">
+				<li class="fragment">Improved performance will allow new research</li>
+				<li class="fragment">Improved sustainability of the research software</li>
+				<li class="fragment">Improved sharing of algorithms and software</li>
+			</ul>
 		</div>
 		<div class="rblock">
 			<img class="plain" src="img_local/eagle.png" alt="The EAGLE simulation"/>
@@ -158,10 +248,10 @@
 		<hr/>
 		<div class="lblock">
 			<ul style="font-size: 0.75em">
-				<li><strong><u>SWIFT</u></strong> is a next-generation open-source SPH cosmology code designed to exploit modern algorithms and parallelisation techniques</li>
-				<li>It is significantly faster (up to 30x when running only hydrodynamics) than code used to run EAGLE, and shows good strong scaling to 200 000 cores, allowing larger simulations, or greater resolution.</li>
-				<li>Designed to be modular with regards to subgrid physics implementation, allowing wide range of simulations - from planet scale to universe scale</li>
-				<li>Image is final snapshot of dark matter only simulation run with SWIFT using 4.5 × 108 particles in an 800Mpc box. Simulation run from early universe to present took 75 hours on 28 cores (1 node), representing a speedup of 8.5x over Gadget2</li>
+				<li class="fragment"><strong><u>SWIFT</u></strong> is a next-generation open-source SPH cosmology code designed to exploit modern algorithms and parallelisation techniques</li>
+				<li class="fragment">It is significantly faster (up to 30x when running only hydrodynamics) than code used to run EAGLE, and shows good strong scaling to 200 000 cores, allowing larger simulations, or greater resolution.</li>
+				<li class="fragment">Designed to be modular with regards to subgrid physics implementation, allowing wide range of simulations - from planet scale to universe scale</li>
+				<li class="fragment">Image is final snapshot of dark matter only simulation run with SWIFT using 4.5 × 108 particles in an 800Mpc box. Simulation run from early universe to present took 75 hours on 28 cores (1 node), representing a speedup of 8.5x over Gadget2</li>
 			</ul>
 		</div>
 		<div class="rblock">
@@ -173,10 +263,10 @@
 		<h3>EAGLE Physics in SWIFT</h3>
 		<hr/>
 		<ul style="font-size: 0.75em">
-			<li>Implementation of subgrid physics from EAGLE in SWIFT, including cooling, star formation, stellar feedback, chemical enrichment, black hole formation and feedback</li>
-			<li>Appropriate functions need to be adapted from EAGLE or written in order to implement each of these phenomena within SWIFT</li>
-			<li>Automated tests and documentation for each are also required</li>
-			<li>Currently cooling has been implemented and automated tests have been written</li>
+			<li class="fragment">Implementation of subgrid physics from EAGLE in SWIFT, including cooling, star formation, stellar feedback, chemical enrichment, black hole formation and feedback</li>
+			<li class="fragment">Appropriate functions need to be adapted from EAGLE or written in order to implement each of these phenomena within SWIFT</li>
+			<li class="fragment">Automated tests and documentation for each are also required</li>
+			<li class="fragment">Currently cooling has been implemented and automated tests have been written</li>
 		</ul>
 	</section>
 
@@ -185,61 +275,16 @@
 		<hr/>
 		<div class="lblock">
 			<ul style="font-size: 0.75em">
-				<li>Cooling rate of a particle depends on: internal energy, redshift, hydrogen number density, helium fraction, metallicity</li>
-				<li>Rates are stored in 4D tables which are interpolated to obtain cooling rate for single particle</li>
-				<li>An improved integration scheme to evolve internal energy, based on the Newton-Raphson method was implemented to reduce number of table lookups (as opposed to bisection method in EAGLE)</li>
-				<li>Tests were written to confirm cooling rate is read correctly from tables and to ensure cooling of uniform box of gas is performed correctly by comparing with subcycled explicit solution</li>
+				<li class="fragment">Cooling rate of a particle depends on: internal energy, redshift, hydrogen number density, helium fraction, metallicity</li>
+				<li class="fragment">Rates are stored in 4D tables which are interpolated to obtain cooling rate for single particle</li>
+				<li class="fragment">An improved integration scheme to evolve internal energy, based on the Newton-Raphson method was implemented to reduce number of table lookups (as opposed to bisection method in EAGLE)</li>
+				<li class="fragment">Tests were written to confirm cooling rate is read correctly from tables and to ensure cooling of uniform box of gas is performed correctly by comparing with subcycled explicit solution</li>
 			</ul>
 		</div>
 		<div class="rblock">
 			<img class="plain" width="300" src="img_local/cooling_elements.png" alt="Contribution to cooling by element"/>
 			<img class="plain" width="270" src="img_local/cooling_uniform.png" alt="Cooling of uniform gas"/>
 		</div>
-	</section>
-
-</section>
-
-<section>
-
-	<section>
-		<h2>Optimisation of Gandalf</h2>
-		<hr/>
-		<p>Mark Filipiak</p>
-	</section>
-
-	<section>
-		<h3>GANDALF</h3>
-		<hr/>
-
-		<p class="smaller">GANDALF is an astrophysical hydrodynamics/N-body dynamics code for star formation, planet formation, and star cluster problems.  C++, MPI, OpenMP</p>
-
-		<ul style="font-size: 0.75em">
-			<li>Most time-consuming routine (calculating forces - computationally intensive) does not use vectorisation</li>
-			<li>Next most time-consuming routines (finding neighbouring particles) are memory limited – increased cache use should improve performance</li>
-			<li>OpenMP scaling is expected to be good</li>
-			<li>MPI scaling suffers from load imbalance</li>
-		</ul>
-	</section>
-
-	<section>
-		<h3>Initial investigations</h3>
-		<hr/>
-		<p class="smaller">Measuring performance using the Intel performance tools:  Advisor (vectorisation), VTune Amplifier (cache use, OpenMP scaling)</p>
-		<ul style="font-size: 0.75em">
-			<li>Intel performance tools help you focus on the code hotspots but provide a lot of information which can be difficult to interpret</li>
-			<li>Always measure performance to decide optimisation strategy - the most time-consuming routine actually needs cache use improved as well as vectorisation</li>
-			<li>OpenMP scaling within a socket is confounded by effects that depend on the number of cores being used:  usable memory bandwidth and Turbo Boost</li>
-		</ul>
-		<p class="smaller">Next step: use Trace Analyser and Collector to measure MPI performance</p>
-
-	</section>
-
-	<section>
-		<h3>Single node scaling</h3>
-		<hr/>
-
-		<img class="plain" width="750" src="img_local/gandalf_node_scaling.png" alt="Scaling of Gandalf code within a single node"/>
-
 	</section>
 
 </section>
@@ -282,10 +327,10 @@
 		<h3>Performance gains</h3>
 		<hr/>
 		<ul style="font-size: 0.75em">
-			<li>New algorithm yields both:
+			<li>New algorithm yields double improvement axis:
 			<ul>
-				<li>Higher flop rate: due to more efficient cache reuse</li>
-				<li>Lower flop count: due to solving multiple RHS simultaneously</li>
+				<li><strong>Higher flop rate</strong>: due to more efficient cache reuse</li>
+				<li><strong>Lower flop count</strong>: due to solving multiple RHS simultaneously</li>
 			</ul></li>
 			<li>Combined improvements give a 7x improvement in time to solution on a single node. e.g.:
 			<ul>
@@ -294,7 +339,7 @@
 			</ul></li>
 			</li>
 		</ul>
-		<p class="smaller">Also worked to push these improvements into the US MILC QCD software but this has
+		<p class="smaller">Also worked to push these improvements upstream into the US MILC QCD software but this has
 		been hampered by software moderators requiring work beyond the scope of this project before incorporation.
 		UK researchers using the development branch of MILC to access improvements for their work.</p>
 	</section>
@@ -304,53 +349,51 @@
 <section>
 
 	<section>
-		<h2>Optimisation of Baidu ML using ideas from QCD</h2>
+		<h2>Optimisation of Gandalf</h2>
 		<hr/>
-		<p>Peter Boyle and Guido Cossau</p>
+		<p>Mark Filipiak</p>
 	</section>
 
 	<section>
-		<h3>What do QCD and ML have in common?</h3>
+		<h3>GANDALF</h3>
 		<hr/>
-		<p>Both require best bandwidth from Infiniband interconnect</p>
-		<p>What is stopping applications accessing wire performance on Infiniband (for large messages)?</p>
-		<p class="smaller fragment">Not enough work to saturate the links from single MPI thread</p>
-		<p class="smaller fragment">Overheads associated with page faults</p>
+
+		<p class="smaller">GANDALF is an astrophysical hydrodynamics/N-body dynamics code for star formation, planet formation, and star cluster problems.</p>
+
+		<p class="smaller fragment">Information from researchers:</p>
+
+		<ul style="font-size: 0.75em">
+			<li class="fragment">Most time-consuming routine (calculating forces - computationally intensive) does not use vectorisation</li>
+			<li class="fragment">Next most time-consuming routines (finding neighbouring particles) are memory limited – increased cache use should improve performance</li>
+			<li class="fragment">OpenMP scaling is expected to be good</li>
+			<li class="fragment">MPI scaling suffers from load imbalance</li>
+		</ul>
 	</section>
 
 	<section>
-		<h3>How can we achieve best BW on Infiniband?</h3>
+		<h3>Initial investigations</h3>
 		<hr/>
+		<p class="smaller">Measuring performance using the Intel performance tools:  Advisor (vectorisation), VTune Amplifier (cache use, OpenMP scaling)</p>
+		<ul style="font-size: 0.75em">
+			<li class="fragment">Intel performance tools help you focus on the code hotspots but provide a lot of information which can be difficult to interpret</li>
+			<li class="fragment">Always measure performance to decide optimisation strategy - the most time-consuming routine actually needs cache use improved as well as vectorisation</li>
+			<li class="fragment">OpenMP scaling within a socket is confounded by effects that depend on the number of cores being used:  usable memory bandwidth and Turbo Boost</li>
+		</ul>
+		<p class="fragment smaller">Next steps: use Trace Analyser and Collector to measure MPI performance</p>
 
-		<p class="smaller fragment">Use hugepages to reduce number of potential page faults</p>
-		<p class="smaller fragment">(Note Transparent hugepages are not generally enough as Linux virtual memory gets fragmented over time and transparent hugepages do not guarantee concurrency. Must configure reserved huge pages at boot time. On x86 processors, since 1985, the time to read a page has decreased by 4000x but the number of pages has increased by 100,000x with the page size staying constant at 4KB.) 
-
-		<p class="samller fragment">Have multiple MPI communicators running on separate threads to saturate the interconnect BW</p>
 	</section>
 
 	<section>
-		<h3>What did this actually entail in practice?</h3>
+		<h3>Single node scaling</h3>
 		<hr/>
 
-		<p class="smaller fragment">Collaboration with MPI library developers to implement multithreaded requirements properly</p>
-		<p class="smaller fragment">Collaboration with system administrators to enable reservation and allocation of hugepages by users</p>
-		<p class="smaller fragment">Modification of the Baidu code to allocate memory through hugepages and implement MPI communicators on multiple threads</p>
-	</section>
+		<img class="plain" width="750" src="img_local/gandalf_node_scaling.png" alt="Scaling of Gandalf code within a single node"/>
 
-	<section>
-		<h3>Performance gains</h3>
-		<hr/>
-		<div class="lblock">
-		<p>Increased %age of wire BW achieved (in QCD and Baidu) to 80-90% from </p>
-		<p>Leads to 4-10x increase in actual application performance</p>
-		<p><a href="https://arxiv.org/pdf/1711.04883.pdf">https://arxiv.org/pdf/1711.04883.pdf</a></p>
-		</div>
-		<div class="rblock">
-			<img class="plain" src="img_local/baidu_perf.png" alt="Interconnect performance for Baidu research ML code"/>
-		</div>
 	</section>
 
 </section>
+
+
 
 <section>
 
@@ -363,14 +406,13 @@
 	<section>
 		<h3>The good, the bad and the ugly</h3>
 		<hr/>
-		<img class="plain" width="200" src="img_local/clint.gif"/>
+		<img class="plain" width="250" src="img_local/clint.gif"/>
 		<ul style="font-size: 0.75em">
-			<li>Diversity of approaches and expertise</li>
-			<li>Natural delegation to leads at each site mitigates single points of failure and bottlenecks</li>
-			<li>Detailed technical discussion is more difficult</li>
-			<li>Fewer opportunities for ad hoc discussion and sharing of information</li>
-			<li>JISC Vscene has proven the best technology for regular meetings as people can connect online or by phone</li>
-			<li>RSE requests overseen and awarded by science panel which has led to poor estimates of RSE effort required for some projects</li>
+			<li class="fragment">Good: Diversity of approaches and expertise</li>
+			<li class="fragment">Good: Natural delegation to leads at each site mitigates single points of failure and bottlenecks</li>
+			<li class="fragment">Bad: Detailed technical discussion is more difficult</li>
+			<li class="fragment">Bad: Fewer opportunities for ad hoc discussion and sharing of information</li>
+			<li class="fragment">Ugly: RSE requests overseen and awarded by science panel which has led to poor estimates of RSE effort required for some projects</li>
 		</ul>
 	</section>
 
@@ -379,10 +421,10 @@
 		<hr/>
 		<img class="plain" width="400" src="img_local/brianc.gif"/>
 		<ul style="font-size: 0.75em">
-			<li>Biannual face-to-face day-long meetings</li>
-			<li>Improve technical specification of projects and oversight before funding</li>
-			<li>Potential to allow researchers to use DiRAC RSE to fund people outwith the core team with specific expewrtise</li>
-			<li>Improve the process for assigning RSEs to provide technical reviews of DiRAC project proposals</li>
+			<li class="fragment">Biannual face-to-face day-long meetings</li>
+			<li class="fragment">Improve technical specification of projects and oversight before funding</li>
+			<li class="fragment">Potential to allow researchers to use DiRAC RSE to fund people outwith the core team with specific expewrtise</li>
+			<li class="fragment">Improve the process for assigning RSEs to provide technical reviews of DiRAC project proposals</li>
 		</ul>
 	</section>
 
