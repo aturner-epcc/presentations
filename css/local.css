@@ -25,6 +25,9 @@ p.note {
 p.smaller {
    font-size: 0.75em;
 }
+ul.smaller {
+   font-size: 0.75em;
+}
 div.rblock {
    float: right;
    display: block;
