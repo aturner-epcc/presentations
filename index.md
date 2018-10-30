@@ -2,6 +2,7 @@
 
 ## 2018
 
+* [Open Source Benchmarking, University of Sheffield, 30 Oct 2018](Sheff_Oct2018)
 * [EdRSE Presentation on RSE](EdRSE_RSE_Sep2018)
 * [RSE2018 Presentation on Benchmarking, 5 Sep 2018](RSE2018_Benchmarking_Sep2018)
 * [RSE2018 Presentation on DiRAC RSE group, 4 Sep 2018](RSE2018_DiRAC_Sep2018)
