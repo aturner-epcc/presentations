@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HPC Carpentry: SC18 BoF:  Best Practices for Scaling-Up and Sustaining HPC Education, Outreach and Training, 13 Nov 2018</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>HPC Carpentry</h1>
+	<hr/>
+	<p>Andy Turner: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a><br />
+	EPCC, The University of Edinburgh<br/>
+	30 July 2018</p>
+	<a href="http://www.carpentries.org"><img class="plain" width="400" src="img_local/TheCarpentries.png" /></a>
+	<a href="http://www.epcc.ed.ac.uk"><img class="plain" width="300" src="../img/epcc_logo.png"/></a>
+</section>
+
+<section>
+
+	<img class="plain" src="../img/cc_licence.png"/>
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+	<h3>Why HPC Carpentry?</h3>
+	<hr/>
+	<ul class="smaller">
+		<li class="fragment">Provide practical, hands-on skills in using remote, advanced computing for researchers
+			<ul>
+				<li class="fragment">Carpentry is aimed at <em>novice</em> users</li>
+				<li class="fragment">Carpentry approach has proven very successful at getting reesearchers from
+					non-traditional areas up and running with computational tools</li>
+			</ul>
+		</li>
+		<li class="fragment">Provide a welcoming and inclusive environment for training for all</li>
+		<li class="fragment">Allow the HPC community to work together to generate high quality training materials</li>
+		<li class="fragment">Enable access to high quality HPC training materials worldwide, including developing countries</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Sustainability</h3>
+	<hr/>
+	<div class="lblock">
+		<ul>
+			<li class="fragment">By community involvement
+				<ul>
+					<li>Following the approach used successfully by Software Carpentry and Data Carpentry</li>
+				</ul>
+			</li>
+			<li class="fragment">Set of maintainers responsible for reviewing and strategic decisions around each <em>lesson</em></li>
+			<li class="fragment">Create lessons in a format that makes contribution easy</li>
+		</ul>
+	</div>
+	<div class="rblock">
+		<img width="700" class="plain" src="img_local/carpentrycon_groupshot.jpg" alt="CarpentryCon 2018 group shot" />
+	</div>
+</section>
+
+<section>
+	<h3>HPC Carpentry Metrics</h3>
+	<hr/>
+	<ul class="smaller">
+		<li>This has not been discussed in much detail. Potential metrics include:
+			<ul>
+	        	<li>Number of workshops run in different countries/terretories in a year</li>
+				<li>Number of workshop attendees and trainers from underrepresented groups</li>
+				<li>Number of feedback responses received in pre and post workshop surveys and during workshops</li>
+				<li>Average score in post-workshop feedback surveys</li>
+				<li>Number of different contributors to lesson development</li>
+				<li>Number of different countries/terretories involved in lesson development</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h3>HPC Carpentry Impact</h3>
+	<hr/>
+	<ul class="smaller">
+		<li>Enabling new research on advanced computational facilities</li>
+		<li>Increase in uptake of advanced computing by new disciplines</li>
+		<li>Improve advanced computing skills in researchers</li>
+		<li>Improved quality of HPC basic training available for researchers</li>
+		<li>Wider range of people able to train researchers to use advanced computing</li>
+		<li>Increased awareness of impact and utility of advanced computing in research</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Train the trainers</h3>
+	<hr/>
+	<p>Train-the-trainer is a fundamental part of the Carpentry approach to training</p>
+	<ul class="smaller">
+		<li>Embedded into the process for Carpentry workshops, each workshop is an 
+			opportunity to expand the pool of HPC Carpentry trainers
+		</li>
+		<li>Open source nature of the training material allows new instructors to 
+			take the material and modify it for their needs easily
+		</li>
+		<li>Free Carpentry instructor training available online:
+			<a href="https://carpentries.github.io/instructor-training/">https://carpentries.github.io/instructor-training/</a></li>
+	</ul>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
