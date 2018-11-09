@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
 		<link rel="stylesheet" href="../css/local.css">
+		<link rel="stylesheet" href="slides.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="../lib/css/zenburn.css">
@@ -28,13 +29,25 @@
 
 <!-- Start of presentation ------------------------------------------------------------------------ -->
 <section>
-	<h1>HPC Carpentry</h1>
-	<hr/>
-	<p>Andy Turner: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a><br />
-	EPCC, The University of Edinburgh<br/>
-	30 July 2018</p>
-	<a href="http://www.carpentries.org"><img class="plain" width="400" src="img_local/TheCarpentries.png" /></a>
-	<a href="http://www.epcc.ed.ac.uk"><img class="plain" width="300" src="../img/epcc_logo.png"/></a>
+	<div class="lblock">
+		<h1>HPC Carpentry</h1>
+		<hr/>
+		<a href="http://www.carpentries.org"><img class="plain" width="400" src="img_local/TheCarpentries.png" /></a>
+		<p style="font-size: 0.8em"><a href="mailto:discuss-hpc@lists.carpentries.org">discuss-hpc@lists.carpentries.org</a></p>
+		<p style="font-size: 0.8em"><a href="mailto:maintainers-hpc@lists.carpentries.org">maitainers-hpc@lists.carpentries.org</a></p>
+	</div>
+	<div class="rblock">
+			<p class="smaller">Robert Freeman Jr., Harvard University</p>
+			<p class="smaller">Trevor Kellar, NIST</p>
+			<p class="smaller">Christina Koch, University of Wisconson-Maddison</p>
+			<p class="smaller">Alan O’Cais, Forschungszentrum Jülich</p>
+			<p class="smaller">Alex Razoumov, Compute Canada</p>
+			<p class="smaller">John Simpson, Compute Canada</p>
+			<p class="smaller">Jeffrey Stafford, Compute Canada</p>
+			<p class="smaller">Peter Steinbach, Scionics</p>
+			<p class="smaller"><u>Andy Turner, EPCC, The University of Edinburgh</u></p>
+		<p style="font-size: 0.8em"><a href="https://hpc-carpentry.github.io/">https://hpc-carpentry.github.io/</a></p>
+	</div>
 </section>
 
 <section>
@@ -56,86 +69,63 @@
 
 </section>
 
-<section>
+<section data-state="community">
 	<h3>Why HPC Carpentry?</h3>
 	<hr/>
-	<ul class="smaller">
-		<li class="fragment">Provide practical, hands-on skills in using remote, advanced computing for researchers
-			<ul>
-				<li class="fragment">Carpentry is aimed at <em>novice</em> users</li>
-				<li class="fragment">Carpentry approach has proven very successful at getting reesearchers from
-					non-traditional areas up and running with computational tools</li>
-			</ul>
-		</li>
-		<li class="fragment">Provide a welcoming and inclusive environment for training for all</li>
-		<li class="fragment">Allow the HPC community to work together to generate high quality training materials</li>
-		<li class="fragment">Enable access to high quality HPC training materials worldwide, including developing countries</li>
-	</ul>
+		<p class="smaller fragment">Provide practical, hands-on skills in using remote, advanced computing for researchers</p>
+				<p class="smaller fragment">Carpentry is aimed at <em>novice</em> users</p>
+				<p class="smaller fragment">Carpentry approach has proven very successful at getting reesearchers from
+					non-traditional areas up and running with computational tools</p>
+		<p class="smaller fragment">Provide a welcoming and inclusive environment for training for all</p>
+		<p class="smaller fragment">Allow the HPC community to work together to generate high quality training materials</p>
+		<p class="smaller fragment">Enable access to high quality HPC training materials worldwide, including developing countries</p>
 </section>
 
-<section>
+<section data-state="community">
+
 	<h3>Sustainability</h3>
 	<hr/>
-	<div class="lblock">
-		<ul>
-			<li class="fragment">By community involvement
-				<ul>
-					<li>Following the approach used successfully by Software Carpentry and Data Carpentry</li>
-				</ul>
-			</li>
-			<li class="fragment">Set of maintainers responsible for reviewing and strategic decisions around each <em>lesson</em></li>
-			<li class="fragment">Create lessons in a format that makes contribution easy</li>
-		</ul>
-	</div>
-	<div class="rblock">
-		<img width="700" class="plain" src="img_local/carpentrycon_groupshot.jpg" alt="CarpentryCon 2018 group shot" />
-	</div>
+	<p class="smaller fragment">Through community involvement - following the approach used successfully by Software Carpentry and Data Carpentry</p>
+	<p class="smaller fragment">Set of maintainers responsible for reviewing and strategic decisions around each <em>lesson</em></p>
+	<p class="smaller fragment">Lessons created in a format that makes contribution easy</p>
 </section>
 
-<section>
+<section data-state="community">
 	<h3>HPC Carpentry Metrics</h3>
 	<hr/>
-	<ul class="smaller">
-		<li>This has not been discussed in much detail. Potential metrics include:
-			<ul>
-	        	<li>Number of workshops run in different countries/terretories in a year</li>
-				<li>Number of workshop attendees and trainers from underrepresented groups</li>
-				<li>Number of feedback responses received in pre and post workshop surveys and during workshops</li>
-				<li>Average score in post-workshop feedback surveys</li>
-				<li>Number of different contributors to lesson development</li>
-				<li>Number of different countries/terretories involved in lesson development</li>
-			</ul>
-		</li>
-	</ul>
+		<p class="smaller">This has not been discussed in much detail. Potential metrics include:</p>
+	        	<p class="smaller fragment">Number of workshops run in different countries/terretories in a year</p>
+				<p class="smaller fragment">Number of workshop attendees and trainers from underrepresented groups</p>
+				<p class="smaller fragment">Number of feedback responses received in pre and post workshop surveys and during workshops</p>
+				<p class="smaller fragment">Average score in post-workshop feedback surveys</p>
+				<p class="smaller fragment">Number of different contributors to lesson development</p>
+				<p class="smaller fragment">Number of different countries/terretories involved in lesson development</p>
 </section>
 
-<section>
+<section data-state="community">
 	<h3>HPC Carpentry Impact</h3>
 	<hr/>
-	<ul class="smaller">
-		<li>Enabling new research on advanced computational facilities</li>
-		<li>Increase in uptake of advanced computing by new disciplines</li>
-		<li>Improve advanced computing skills in researchers</li>
-		<li>Improved quality of HPC basic training available for researchers</li>
-		<li>Wider range of people able to train researchers to use advanced computing</li>
-		<li>Increased awareness of impact and utility of advanced computing in research</li>
-	</ul>
+		<p class="smaller fragment">Enabling new research on advanced computational facilities</p>
+		<p class="smaller fragment">Increase in uptake of advanced computing by new disciplines</p>
+		<p class="smaller fragment">Improve advanced computing skills in researchers</p>
+		<p class="smaller fragment">Improved quality of HPC basic training available for researchers</p>
+		<p class="smaller fragment">Wider range of people able to train researchers to use advanced computing</p>
+		<p class="smaller fragment">Increased awareness of impact and utility of advanced computing in research</p>
 </section>
 
-<section>
+<section data-state="community">
 	<h3>Train the trainers</h3>
 	<hr/>
-	<p>Train-the-trainer is a fundamental part of the Carpentry approach to training</p>
-	<ul class="smaller">
-		<li>Embedded into the process for Carpentry workshops, each workshop is an 
+	<p class="smaller fragment">Train-the-trainer is a fundamental part of the Carpentry approach to training</p>
+		<p class="smaller fragment">Embedded into the process for Carpentry workshops, each workshop is an 
 			opportunity to expand the pool of HPC Carpentry trainers
-		</li>
-		<li>Open source nature of the training material allows new instructors to 
+		</p>
+		<p class="smaller fragment">Open source nature of the training material allows new instructors to 
 			take the material and modify it for their needs easily
-		</li>
-		<li>Free Carpentry instructor training available online:
-			<a href="https://carpentries.github.io/instructor-training/">https://carpentries.github.io/instructor-training/</a></li>
-	</ul>
+		</p>
+		<p class="smaller fragment">Free Carpentry instructor training available online:
+			<a href="https://carpentries.github.io/instructor-training/">https://carpentries.github.io/instructor-training/</a></p>
+
 </section>
 
 			</div>
