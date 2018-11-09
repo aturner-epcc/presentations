@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Open Source HPC Benchmarking: 30 Oct 2018</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>Open Source HPC Benchmarking</h1>
+	<p>Andy Turner, EPCC<br/>
+	15 Nov 2018<br/>
+	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
+	
+	<img class="plain" src="img_local/epcc_logo.png"/>
+</section>
+
+<section>
+
+	<img class="plain" src="img_local/cc_licence.png" alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" />
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+	<h3>Overview</h3>
+	<hr/>
+	<ul class="smaller">
+		<li>Introduction</li>
+		<li>Open source benchmarking</li>
+		<li>Benchmarking results</li>
+		<li>Live demo</li>
+		<li>Next steps</li>
+	</ul>
+	<p><a href="https://github.com/hpc-uk/archer-benchmarks">https://github.com/hpc-uk/archer-benchmarks</a></p>
+</section>
+
+<section>
+
+	<section>
+		<h2>Introduction</h2>
+		<img class="plain" src="img_local/efficiency_2x.png" alt"Efficiency"/>
+		<p><a href="https://xkcd.com/1445/">https://xkcd.com/1445/</a></p>
+	</section>
+
+	<section>
+		<h3>Why benchmarking now?</h3>
+		<hr/>
+		<div class="lblock">
+			<ul class="smaller">
+				<li class="fragment">Lots of different HPC systems available to UK researchers
+					<ul>
+						<li class="fragment">ARCHER: UK National Supercomputing Service</li>
+						<li class="fragment">DiRAC: Astronomy and Particle Physics National HPC Service</li>
+						<li class="fragment">National Tier2 HPC Services</li>
+						<li class="fragment">PRACE: pan-European HPC facilities</li>
+						<li class="fragment">Commercial cloud providers</li>
+					</ul>
+				</li>
+				<li class="fragment">A diversity of architectures available (or coming soon):
+					<ul>
+						<li class="fragment">Intel Xeon CPU</li>
+						<li class="fragment">NVidia GPU</li>
+						<li class="fragment">Arm64 CPU</li>
+						<li class="fragment">AMD EPYC CPU</li>
+						<li class="fragment">&hellip;(variety of interconnects and I/O systems)</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="rblock">
+			<img class="plain" src="img_local/ARCHER_logo.png" alt="ARCHER logo"/>
+			<img class="plain" width="200" src="img_local/tier2_logo.jpg" alt="Tier2 logo"/>
+			<img class="plain" src="img_local/dirac.png" alt="DiRAC logo"/>
+			<img class="plain" src="img_local/prace-logo.png" alt="PRACE logo"/>
+		</div>
+	</section>
+
+	<section>
+		<h3>Audience: users and service personnel</h3>
+		<hr/>
+		<ul>
+			<li class="fragment">Give researchers information required to choose best service for their research</li>
+			<li class="fragment">Allow service staff to understand their service performance and help plan procurements</li>
+		</ul>
+		<hr class="fragment"/>
+		<p class="fragment">Benchmarks should aim to test full software with realistic use cases</p>
+	</section>
+
+	<section>
+		<h3>Initial approach</h3>
+		<hr/>
+		<ul class="smaller">
+			<li class="fragment">Use software in the same way as a researcher would:
+				<ul>
+					<li class="fragment">Use already installed versions if possible</li>
+					<li class="fragment">Compile sensibly for performance but do not extensively optimise</li>
+				</ul>
+			</li>
+			<li class="fragment">May use different versions of software on different platforms (but try to use newest version available)</li>
+			<li class="fragment">Additional synthetic benchmarks to test I/O performance</li>
+		</ul>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Open source benchmarking</h2>
+		<img class="plain" src="img_local/xkcd_open_source.png" alt="XKCD Open Source"/>
+		<p></p><a href="https://xkcd.com/225/">https://xkcd.com/225/</a></p>
+	</section>
+
+	<section>
+		<h3>What is open source benchmarking?</h3>
+		<hr/>
+		<ul>
+			<li class="fragment">Full output data from benchmark runs are freely available</li>
+			<li class="fragment">Full information on compilation (if performed) freely available</li>
+			<li class="fragment">Full information on how benchmarks are run are freely available</li>
+			<li class="fragment">Input data for benchmarks are freely available</li>
+			<li class="fragment">Source for all analysis programs are freely available</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Problems with benchmarking studies</h3>
+		<hr/>
+		<p class="fragment smaller">Benchmarking is about quantitative comparison</li>
+		<p style="color: red;" class="smaller fragment">Most benchmarking studies do not lend themselves to quantitative comparison
+		<ul class="smaller">
+			<li class="fragment">Do not publish raw results, only processed data</li>
+			<li class="fragment">Do not publish details of how data was processed in suffcient detail</li>
+			<li class="fragment">Do not provide input datasets and job submission scripts</li>
+			<li class="fragment">Do not provide details of the how software was compiled</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Benefits of open source approach</h3>
+		<hr/>
+		<ul>
+			<li class="fragment">Allows proper comparison with other studies</li>
+			<li class="fragment">Data can reused (in different ways) by other people</li>
+			<li class="fragment">Easy to share and collaborate with others</li>
+			<li class="fragment">Verification and checking - people can check your approach and analysis</li>
+		</ul>
+	</section>
+</section>
+
+
+<section>
+	<section>
+		<h2>Results</h2>
+		<img class="plain" src="img_local/dilbert_benchmark.gif" alt="Dilbert benchmarking"/>
+		<p><a href="http://dilbert.com/strip/2004-02-04">http://dilbert.com/strip/2004-02-04</a></p>
+	</section>
+
+	<section>
+		<h3>Single node performance: GROMACS</h3>
+		<hr/>
+		<table style="font-size: 0.5em">
+			<tr>
+				<th>System</th>
+				<th>Architecture</th>
+				<th>Performance (ns/day)</th>
+				<th>cf. ARCHER</th>
+			</tr>
+			<tr>
+				<td>ARCHER</td>
+				<td>2x Intel Xeon E5-2697v2 (12 core)</td>
+				<td>1.216</td>
+				<td>1.000</td>
+			</tr>
+			<tr>
+				<td>Cirrus</td>
+				<td>2x Intel Xeon E5-2695v4 (18 core)</td>
+				<td>1.699</td>
+				<td>1.397</td>
+			</tr>
+			<tr>
+				<td>Tesseract</td>
+				<td>2x Intel Xeon Silver 4116 (12 core)</td>
+				<td>1.216</td>
+				<td>1.088</td>
+			</tr>
+			<tr>
+				<td>Peta4-Skylake</td>
+				<td>2x Intel Xeon Gold 6142 (16 core)</td>
+				<td>2.082</td>
+				<td>1.712</td>
+			</tr>
+			<tr>
+				<td>Isambard</td>
+				<td>2x Arm Cavium ThunderX2 (32 core)</td>
+				<td>1.471</td>
+				<td>1.201</td>
+			</tr>
+			<tr>
+				<td>Wilkes2-GPU</td>
+				<td>4x NVidia V100 (PCIe)</td>
+				<td>2.774</td>
+				<td>2.257</td>
+			</tr>
+		</table>
+	</section>
+
+	<section>
+		<h3>Multinode performance: CASTEP</h3>
+		<hr/>
+		<img class="plain" src="img_local/CASTEP_AlSlab_perf.png" alt="Plot of CASTEP performance"/>
+	</section>
+
+	<section>
+		<h3>I/O parallel write bandwidth: benchio</h3>
+		<hr/>
+		<img class="plain" src="img_local/benchio_write_bw_small.png" alt="Plot of write bandwidth"/>
+	</section>
+
+	<section>
+		<h3>I/O parallel MDS performance: mdtest</h3>
+		<hr/>
+		<img class="plain" height="450" src="img_local/mdtest_mp-mf-sd_large.png" alt="Plot of wMDS performace"/>
+	</section>
+</section>
+
+<section>
+	<h3>Next steps</h3>
+	<hr/>
+	<ul class="smaller">
+		<li class="fragment">Write a report on single node performance comparisons</li>
+		<li class="fragment">Run multi-node Arm processor tests as soon as systems are available</li>
+		<li class="fragment">Run benchmarks on commercial cloud offerings</li>
+		<li class="fragment">Include ML/DL benchmarks in set</li>
+		<li class="fragment">Perform performance analysis on existing benchmarks and add to repository</li>
+	</ul>
+	<p><a class="fragment" href="https://github.com/hpc-uk/archer-benchmarks">https://github.com/hpc-uk/archer-benchmarks</a></p>
+</section>
+	
+<section>
+	<img class="plain" src="img_local/rse_banner.png" alt="Research Software Engineers banner" />
+
+	<p>Campaigning for the recognition of the RSE role, creating a community of RSE's and 
+		organising events for RSE's to meet, exchange knowledge and collaborate.</p>
+
+	<p>Join the community!</p>
+
+	<p><a href="http://www.rse.ac.uk">http://www.rse.ac.uk</a>|
+	<a href="http://www.society-rse.org">http://www.society-rse.org</a></p>
+</section>
+
+<section>
+	<h3>HPC Europa 3: Transnational access programme</h3>
+	<hr/>
+	<p style="font-size: 0.75em">EC-funded collaborative research visits using HPC</p>
+	<div class="lblock">
+		<ul class="smaller">
+			<li>Applicants can be any level: masters to professors</li>
+			<li>Visit duration is from 2 to 13 weeks</li>
+			<li>Funding for travel and accommodation / living expenses</li>
+			<li>Includes access to world-class HPC facilities</li>
+			<li>Training and support provided</li>
+			<li>Researchers in UK can be visitors or hosts</li>
+			<li>Easy application procedure: 4 closing dates per year – apply any time</li>
+		</ul>
+	</div>
+	<div class="rblock">
+		<img class="plain" src="img_local/hpce3_map.png" alt="HPC Europa 3 map"/>
+	</div>
+	<p><a href="http://www.hpc-europa.org/">http://www.hpc-europa.org/</a></p>
+</section>
+
+
+<section>
+	<img class="plain" src="img_local/hpcuk_logo.png" alt="HPC-UK logo" />
+
+	<p>Information on facilities and how to access them</p>
+	<p><a href="http://www.hpc-uk.ac.uk">http://www.hpc-uk.ac.uk</a></p>
+
+	<p>Open Source, community-developed resource</p>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
