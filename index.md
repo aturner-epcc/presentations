@@ -2,6 +2,7 @@
 
 ## 2018
 
+* [Open Source Benchmarking, SC18 PRACE Presentation](SC18_Bench_PRACE_Nov2018)
 * [HPC Carpentry, SC18 BoF: Best practices for scaling and sustaining HPC education](SC18_BoF_Carpentry_Nov2018)
 * [Open Source Benchmarking, University of Sheffield, 30 Oct 2018](Sheff_Oct2018)
 * [EdRSE Presentation on RSE](EdRSE_RSE_Sep2018)
