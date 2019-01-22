@@ -1,0 +1,628 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>UK HPC Facilities</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>HPC facilities for UK researchers</h1>
+	<p>Andy Turner, EPCC<br/>
+	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
+	<img class="plain" src="../img/epcc_logo.png" />
+</section>
+
+<section>
+
+	<img class="plain" src="../img/cc_licence.png"/>
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+	<h2>Overview</h2>
+	<hr/>
+	<ul>
+		<li><a href="#/epcc">EPCC</a></li>
+		<li><a href="#/ukhpc">UK HPC Facilities</a>
+			<ul class="inner">
+				<li><a href="#/archer">ARCHER</a> - UK National Supercomputing Service</li>
+				<li><a href="#/dirac">DiRAC</a> - STFC national HPC service</li>
+				<li><a href="#/tier2">UK National Tier-2 HPC facilities</a></li>
+				<li><a href="#/other">Other facilities</a></li>
+
+			</ul></li>
+		<li><a href="#/support">Getting Advice</a></li>
+		<li><a href="#/benchmarking">Open Source Benchmarking</a></li>
+		<li><a href="#/summary">Summary</a></li>
+	</ul>
+</section>
+
+
+<!-- EPCC Section ------------------------------------------------------------------------ -->
+
+<section id="epcc">
+	<img class="plain" src="../img/epcc_logo.png" />
+	<p><a href="http://www.epcc.ed.ac.uk">http://www.epcc.ed.ac.uk</a></p>
+</section>
+
+<section>
+	<div class="lblock">
+		<ul>
+			<li>One of Europe's top HPC centres</li>
+			<li>27 years old: ~90 staff</li>
+			<li>Fully self-sustaining: £8m turnover per annum</li>
+			<li>Leading UK national HPC provider</li>
+			<li>Range of expertise: HPC to Data Science and Cloud</li>
+			<li>Work closely with academia and industry</li>
+		</ul>
+		<img width="230" class="plain" src="img_local/protein.png" />
+		<img width="230" class="plain" src="img_local/flow.png" />
+	</div>
+	<div class="rblock">
+		<img class="plain" src="img_local/brain_image.png" />
+		<ul>
+			<li>FARR INSTITUTE: data analytics service for NHS Scotland safe haven</li>
+			<li>SSI: better software, better research</li>
+			<li>FORTISSIMO: Europe's largest collaborative programme for HPC with SMEs</li>
+		</ul>
+	</div>
+
+</section>
+
+<section>
+	<h3>Facilities hosted at EPCC ACF</h3>
+	<hr/>
+	<ul>
+		<li>ARCHER - UK National Supercomputing Service</li>
+		<li>DiRAC Extreme Scaling - STFC national HPC service</li>
+		<li>Cirrus - National Tier-2 HPC resource</li>
+		<li>UK RDF - Large scale data store and analysis</li>
+		<li>ATI - Novel data science platforms</li>
+		<li>FARR - NHS Scotland safe haven and data analysis</li>
+	</ul>
+</section>
+
+<!-- HPC-UK Section ------------------------------------------------------------------------ -->
+
+<section id="ukhpc">
+	<h2>UK HPC Facilities</h2>
+</section>
+
+<section id="ukhpc">
+	<h3>HPC Tiers</h3>
+	<hr/>
+	<ul>
+		<li>Tier-1 Facilities: ARCHER and DiRAC</li>
+		<li>Tier-2 Facilities: (between Tier-1 and Tier-3!)</li>
+		<li>Tier-3 Facilities: institutional facilities</li>
+		<li>Other Facilities: e.g. public cloud</li>
+	</ul>
+
+	<p>Distinctions often blur between different tiers</p>
+</section>
+
+<section>
+	<img class="plain" src="../img/hpcuk_logo.png" />
+
+	<p>Information on facilities and how to access them</p>
+	<p><a href="http://www.hpc-uk.ac.uk">http://www.hpc-uk.ac.uk</a></p>
+
+	<p>Open Source, community developed resource</p>
+</section>
+
+<section>
+	<h3>HPC Services Covered</h3>
+	<hr/>
+	<ul>
+		<li><a href="#/archer">ARCHER</a> - UK National Supercomputing Service</li>
+		<li><a href="#/dirac">DiRAC</a> - STFC national HPC service</li>
+		<li><a href="#/tier2">UK National Tier-2 HPC facilities</a></li>
+		<li><a href="#/tier2">Other facilities</a></li>
+	</ul>
+</section>
+
+
+<!-- ARCHER Section ------------------------------------------------------------------------ -->
+<section id="archer">
+	<img class="plain" src="../img/ARCHER_logo.png" />
+	<p><a href="http://www.archer.ac.uk">http://www.archer.ac.uk</a></p>
+</section>
+
+<section>
+	<h4>UK National Supercomputer Service</h4>
+	<div class="lblock">
+		<img width="250" class="plain" src="../img/epsrc-highres.jpg" />
+		<img width="150" class="plain" src="../img/nerc-logo-large.jpg" />
+		<img width="250" class="plain" src="../img/epcc_logo.png" />
+		<img width="250" class="plain" src="../img/cray-logo.png" />
+	</div>
+	<div class="rblock">
+		<img class="plain" src="img_local/archer_cabs.png" />
+	</div>
+</section>
+
+<section>
+	<h4>ARCHER Service Design</h4>
+	<hr/>
+	<ul>
+		<li>High core count distributed memory: 1000+ cores</li>
+		<li>"Traditional" capability HPC</li>
+		<li>Main users: Materials science, Climate/ocean modelling, CFD, <em>etc.</em></li>
+		<li>Growing interest in non-traditional use: <em>e.g.</em> data science, bioinformatics</li>
+	</ul>
+	<p>Cray XC30: 118,080 cores (4920 nodes)<br/>2&times; 12-core Xeon per node; 64/128 GiB memory</p>
+</section>
+
+<section>
+	<h4>ARCHER Support</h4>
+	<hr/>
+	<p>Large amount of support provided by EPCC</p>
+
+	<ul>
+		<li>Helpdesk with access to all EPCC expertise</li>
+		<li>Free training across the UK</li>
+		<li>eCSE calls for software development - now closed</li>
+		<li>Benchmarking/profiling work to support users</li>
+	</ul>
+
+	<p>All free at point of use</p>
+
+</section>
+
+<section>
+	<h4>Access to ARCHER</h4>
+	<hr/>
+	<dl style="font-size: 0.75em">
+		<dt>Instant Access (EPSRC remit only)</dt>
+		<dd>Small amounts of resource to test ARCHER facilities</dd>
+		<dt>ARCHER Driving Test</dt>
+		<dd>Complete simple test and gain small amounts of resource to test ARCHER facilities</dd>
+		<dt>Resource Allocation Panel (RAP) (EPSRC remit only)</dt>
+		<dd>Applications for large amounts of ARCHER resource for 1 year</dd>
+		<dt>Grant Access</dt>
+		<dd>Add access costs to grant application (notional for EPSRC/NERC, real otherwise)</dd>
+	</dl>
+	<p><a href="http://www.archer.ac.uk/access">http://www.archer.ac.uk/access</a></p>
+</section>
+
+
+<!-- DiRAC Section ------------------------------------------------------------------------ -->
+<section id="dirac">
+	<img class="plain" src="../img/dirac_logo.png" />
+	<p><a href="http://www.dirac.ac.uk">http://www.dirac.ac.uk</a></p>
+</section>
+
+<section>
+	<h4>STFC National HPC Service</h4>
+	<div class="lblock">
+		<ul>
+			<li>Range of different systems</li>
+			<li>Covers capacity to capability use</li>
+			<li>Main HPC resource for STFC</li>
+		</ul>
+		<img class="plain" src="../img/stfc_logo.jpg" />
+	</div>
+	<div class="rblock">
+		<img class="plain" src="img_local/Cosma7-cabs.jpg" />
+	</div>
+</section>
+
+<section>
+	<dl style="font-size: 0.75em">
+		<dt>Extreme Scaling: Edinburgh Tesseract</dt>
+		<dd>Designed for applications that scale to high core counts</dd>
+		<dt>Memory Intensive: Durham COSMA</dt>
+		<dd>High core counts using high memory per core, high performance interconnect and I/O</dd>
+		<dt>Data Intensive: Cambridge Cumulus and Leicester</dt>
+		<dd>High performance interconnect and I/O, range of processor technologies</dd>
+	</dl>
+</section>
+
+<section>
+	<h3>Access to DiRAC</h3>
+	<hr/>
+	<dl style="font-size: 0.75em">
+		<dt>Seedcorn Access</dt>
+		<dd>Small amounts of resource to test DiRAC facilities. Always available by
+			contacting the DiRAC service.</dd>
+		<dt>Resource Allocation Committee (RAC)</dt>
+		<dd>Applications for large amounts of DiRAC resource for either 1 year (small
+			projects) or 3 years (large projects).
+	</dl>
+	<p><a href="http://www.dirac.ac.uk/access.html">http://www.dirac.ac.uk/access.html</a></p>
+</section>
+
+<!-- Tier-2 Section ------------------------------------------------------------------------ -->
+<section id="tier2">
+	<h2>Tier2: National Facilities</h2>
+	<img width="400" class="plain" src="../img/tier2_logo.jpg" />
+	<img width="300" class="plain" src="../img/epsrc-highres.jpg"/>
+</section>
+
+<section>
+	<p>Nationally accessible, located across the UK</p>
+	<div class="lblock">
+		<img class="plain" src="../img/tier2_logos.png"/>
+	</div>
+	<div class="rblock">
+		<img src="img_local/tier2-map.png" />
+	</div>
+</section>
+
+<section>
+	<h3>Intel Xeon Clusters</h3>
+	<hr/>
+	<dl style="font-size: 0.75em">
+		<dt>Cirrus@EPCC</dt>
+			<dd>10,080 core Broadwell, FDR Infiniband Hypercube</dd>
+		<dt>HPC Midlands+</dt>
+			<dd>14,336 core Broadwell, 3:1 blocking EDR Infiniband (764 core non-blocking)</dd>
+			<dd>10 POWER8 per nodes with 1 TB memory</dd>
+		<dt>Cumulus@Cambridge</dt>
+			<dd>24,576 core Skylake, Intel Omnipath</dd>
+		<dt>Materials and Molecular Modelling Hub</dt>
+			<dd>17,280 core Broadwell, 3:1 blocking Intel Omnipath (864 core non-blocking)</dd>
+	</dl>
+</section>
+
+<section>
+	<h3>Other architectures</h3>
+	<hr/>
+	<dl style="font-size: 0.75em">
+		<dt>JADE</dt>
+			<dd>22 Nvidia DGX-1: 2&times; Xeon + 8&times; Nvidia P100 GPGPU</dd>
+		<dt>Cumulus@Cambridge</dt>
+			<dd>90 nodes: Xeon + 4&times; Nvidia P100 GPGPU, EDR Infiniband</dd>
+			<dd>384 Xeon Phi nodes (96 GiB memory per node), Intel Omnipath</dd>
+			<dd>50 node Hadoop Cluster</dd>
+		<dt>Isambard@GW4</dt>
+			<dd>10,000+ ARMv8 cores, Cray Aries Interconnect</dd>
+	</dl>
+</section>
+
+
+<section id="cirrus">
+	<div class="lblock">
+		<ul>
+			<li>Flexible HPC:
+				<ul>
+					<li>Traditional HPC</li>
+					<li>Task farming</li>
+					<li>Data science</li>
+
+			 	</ul></li>
+			<li>HPE/SGI ICE XA:
+				<ul>
+					<li>2&times; 16-core Xeon per node, 256 GiB memory</li>
+					<li>10,080 cores (280 nodes)</li>
+				</ul></li>
+			<li>Supported by EPCC experts:
+				<ul>
+					<li>Broad range of experience and expertise</li>
+					<li>Close links with ARCHER technical support</li>
+				</ul></li>
+		</ul>
+	</div>
+	<div class="rblock">
+		<img class="plain" src="../img/cirrus_logo.png"/>
+		<img class="plain" src="img_local/cirrus_cabs.png"/>
+		<p><a href="http://www.cirrus.ac.uk">http://www.cirrus.ac.uk</a></p>
+	</div>
+</section>
+
+<section>
+	<ul>
+		<h3>Cirrus Software</h3>
+		<hr/>
+		<li>Wide range of supported software:
+			<ul class="inner">
+				<li>HPC applications: <em>e.g.</em> CASTEP, OpenFOAM, GROMACS</li>
+				<li>Data science software: <em>e.g.</em> Hadoop, Spark</li>
+				<li>Profiling and debugging tools</li>
+			</ul></li>
+		<li>Customisable environment:
+			<ul class="inner">
+				<li>Singularity containers</li>
+				<li>Hosting of user-controlled virtual machines</li>
+			</ul></li>
+	</ul>
+</section>
+
+<section>
+	<h3>Access to Tier2</h3>
+	<hr/>
+	<dl style="font-size: 0.75em">
+		<dt>Instant Access (EPSRC remit only)</dt>
+		<dd>Small amounts of resource to test Tier2 facilities</dd>
+		<dd>Available on Cirrus and CSD3</dd>
+		<dt>Resource Allocation Panel (RAP) (EPSRC remit only)</dt>
+		<dd>Applications for large amounts of Tier2 resource for 1 year (next call due Mar/Apr 2019)</dd>
+		<dt>Grant Access</dt>
+		<dd>Add access costs to grant application (notional for EPSRC, real otherwise)</dd>
+		<dt>Materials and Molecular Modelling Hub</dt>
+		<dd>Access via Materials Chemistry (MCC) or UK Car-Parrinello (UKCP) consortia</dd>
+	</dl>
+</section>
+
+<section>
+	<dl style="font-size: 0.75em">
+		<dt>Cirrus@EPCC</dt>
+			<dd><a href="http://www.cirrus.ac.uk">http://www.cirrus.ac.uk</a></dd>
+		<dt>HPC Midlands+</dt>
+			<dd><a href="http://www.hpc-midlands-plus.ac.uk">http://www.hpc-midlands-plus.ac.uk</a></dd>
+		<dt>Cumulus@Cambridge</dt>
+			<dd><a href="http://www.csd3.cam.ac.uk">http://www.csd3.cam.ac.uk</a></dd>
+		<dt>JADE</dt>
+			<dd><a href="http://www.jade.ac.uk">http://www.jade.ac.uk</a></dd>
+		<dt>Isambard@GW4</dt>
+			<dd><a href=" http://gw4.ac.uk/isambard"> http://gw4.ac.uk/isambard</a></dd>
+		<dt>Materials and Molecular Modelling Hub</dt>
+			<dd><a href="https://mmmhub.ac.uk">https://mmmhub.ac.uk</a></dd>
+	</dl>
+
+</section>
+
+<!-- Other Facilities -------------------------------------------------------------- -->
+
+<section id="other">
+	<h2>Other HPC Facilities</h2>
+</section>
+
+<section>
+	<h3>International Facilities</h3>
+	<hr/>
+	<dl style="font-size: 0.75em">
+		<dt>PRACE</dt>
+		<dd>Large-scale European facilities</dd>
+		<dd>Number of different call types available</dd>
+		<dd><a href="http://www.prace-ri.eu">http://www.prace-ri.eu</a></dd>
+		<dt>US DoE INCITE</dt>
+		<dd>Access to the largest HPC facilities in the USA</dd>
+		<dd>Need to demonstrate need for extreme parallel scaling</dd>
+		<dd><a href="http://www.doeleadershipcomputing.org/incite-program/">http://www.doeleadershipcomputing.org/incite-program/</a></dd>
+	</dl>
+</section>
+
+<section>
+	<h3>Commercial Cloud</h3>
+	<hr/>
+	<p>All major cloud providers offer some sort of HPC with pay per access.</p>
+
+	<ul>
+		<li>Complex to setup at the moment</li>
+		<li>Cost per hour is more expensive than UK facilities</li>
+		<li>Can be extremely flexible and grow/shrink on-demand</li>
+		<li>Viable option for large number of single node jobs, not yet there for multinode MPI jobs</li>
+	</ul>
+
+</section>
+
+<!-- Support Section ------------------------------------------------------------------------ -->
+
+<section id="support">
+	<h2>Getting Advice</h2>
+	<img class="plain" src="img_local/mortar-launch-fail.gif" />
+</section>
+
+<section>
+	<h3>From EPCC</h3>
+	<hr/>
+	<ul>
+		<li>Helpdesks: ARCHER and Cirrus
+			<ul class="inner">
+				<li>Service focussed</li>
+				<li>Access to full range of EPCC expertise as required</li>
+			</li></ul>
+		<li>Collaborative projects
+			<ul class="inner">
+				<li>Add EPCC staff to proposals</li>
+				<li>Use up small amounts of "left-over" money in existing grants</li>
+				<li>Co-supervise MSc projects</li>
+			</li></ul>
+		<li>Training courses</li>
+		<li>Informal advice: always happy to chat to you!</li>
+	</ul>
+
+	<p><a href="mailto:info@epcc.ed.ac.uk">info@epcc.ed.ac.uk</a></p>
+</section>
+
+<section>
+	<h3>From local HPC Champions</h3>
+	<hr/>
+	<ul>
+		<li>Experienced HPC users or service staff</li>
+		<li>Willing to help local users with advice on:
+			<ul class="inner">
+				<li>Access routes to HPC</li>
+				<li>Suitability of different resources</li>
+				<li>Where to go for more help</li>
+			</li></ul>
+		</li>
+		<li>Currently listed on the ARCHER website but remit is wider than just ARCHER</li>
+	</ul>
+	<p><a href="http://www.archer.ac.uk/community/champions/names/">http://www.archer.ac.uk/community/champions/names/</a></p>
+</section>
+
+<section>
+	<img class="plain" src="../img/rse_banner.png" />
+
+	<p>Campaigning for the recognition of the RSE role, creating a community of RSE's and 
+		organising events for RSE's to meet, exchange knowledge and collaborate.</p>
+
+	<p>Join the community!</p>
+
+	<p><a href="http://www.rse.ac.uk">http://www.rse.ac.uk</a></p>
+
+</section>
+
+<!-- Benchmarking Section ------------------------------------------------------------------------ -->
+
+<section id="benchmarking">
+	<h2>Open Source Benchmarking</h2>
+	<img class="plain" src="img_local/dilbert_benchmark.gif" alt="Dilbert benchmarking"/>
+	<p><a href="http://dilbert.com/strip/2004-02-04">http://dilbert.com/strip/2004-02-04</a></p>
+	<p><a href="https://github.com/hpc-uk/archer-benchmarks">https://github.com/hpc-uk/archer-benchmarks</a></p>
+</section>
+
+<section>
+	<h3>What is open source benchmarking?</h3>
+	<hr/>
+	<ul>
+		<li class="fragment">Full output data from benchmark runs are freely available</li>
+		<li class="fragment">Full information on compilation (if performed) freely available</li>
+		<li class="fragment">Full information on how benchmarks are run are freely available</li>
+		<li class="fragment">Input data for benchmarks are freely available</li>
+		<li class="fragment">Source for all analysis programs are freely available</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Problems with benchmarking studies</h3>
+	<hr/>
+	<p class="fragment smaller">Benchmarking is about quantitative comparison</li>
+	<p style="color: red;" class="smaller fragment">Most benchmarking studies do not lend themselves to quantitative comparison
+	<ul class="smaller">
+		<li class="fragment">Do not publish raw results, only processed data</li>
+		<li class="fragment">Do not publish details of how data was processed in suffcient detail</li>
+		<li class="fragment">Do not provide input datasets and job submission scripts</li>
+		<li class="fragment">Do not provide details of the how software was compiled</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Benefits of open source approach</h3>
+	<hr/>
+	<ul>
+		<li class="fragment">Allows proper comparison with other studies</li>
+		<li class="fragment">Data can reused (in different ways) by other people</li>
+		<li class="fragment">Easy to share and collaborate with others</li>
+		<li class="fragment">Verification and checking - people can check your approach and analysis</li>
+	</ul>
+</section>
+
+<section>
+	<h3>CASTEP (plane-wave DFT): Al Slab</h3>
+	<hr/>
+	<img class="plain" src="img_local/CASTEP_AlSlab_perf.png" alt="Plot of CASTEP performance"/>
+</section>
+
+<section>
+	<h3>GROMACS (classical N-body): 1400k Atoms</h3>
+	<hr/>
+	<img class="plain" src="img_local/GROMACS_1400k_perf.png" alt="Plot of GROMACS performance"/>
+</section>
+
+<section>
+	<h3>OpenSBLI (CFD): 1024 Taylor-Green Vortex</h3>
+	<hr/>
+	<img class="plain" src="img_local/osbli_tgv_perf.png" alt="Plot of OpenSBLI performance"/>
+</section>
+
+<section>
+	<h3>Overview</h3>
+	<hr/>
+	<ul class="smaller">
+		<li>Intel Skylake Gold systems generally best performing for most applications</li>
+		<li>Accelerators (GPUs) not been incorporated into benchmarking yet (coming Spring 2019!)</li>
+		<li>Results for Arm64/AMD systems not available yet in this set but early indications are engouraging</li>
+	</ul>
+	<p>Initial performance comparison: <a href="https://edin.ac/2Q1m7ot">https://edin.ac/2Q1m7ot</a></p>
+	<p>GW4 Isambard Arm64 performance results: <a href="http://uob-hpc.github.io/assets/cug-2018.pdf">http://uob-hpc.github.io/assets/cug-2018.pdf</a></p>
+</section>
+
+<!-- Summary Section ------------------------------------------------------------------------ -->
+
+<section id="summary">
+	<h2>Summary</h2>
+</section>
+
+<section>
+	<h3>Test Access</h3>
+	<hr/>
+	<p><a href="http://www.archer.ac.uk">ARCHER Driving Test:</a> Access to ARCHER for any researcher based at UK institution</p>
+	<p><a href="http://www.hpc-uk.ac.uk/access">Instant Access:</a> Access to ARCHER, Cirrus, CSD3 for EPSRC-remit research</p>
+	<p><a href="http://www.dirac.ac.uk/access.html">DiRAC Seedcorn:</a> Access to DiRAC for STFC-remit research</p>
+</section>
+
+<section>
+	<h3>Specific Calls for Compute Time</h3>
+	<hr/>
+	<p><a href="http://www.hpc-uk.ac.uk/access">EPSRC RAP:</a> Access to ARCHER and Tier2 for EPSRC-remit research</p>
+	<p><a href="http://www.dirac.ac.uk/access.html">DiRAC RAC:</a> Access to DiRAC for STFC-remit research</p>
+</section>
+
+<section>
+	<h3>Access via grant proposals</h3>
+	<hr/>
+	<p><a href="http://www.archer.ac.uk/access">ARCHER:</a> any funding body possible - notional costs for EPSRC/NERC</p>
+	<p><a href="http://www.hpc-uk.ac.uk/access">Tier2:</a> any funding body possible - notional costs for EPSRC</p>
+	<p><a href="http://www.dirac.ac.uk/access.html">DiRAC:</a> no time via grant applications - DiRAC RAC used instead</p>
+</section>
+
+<section>
+	<ul>
+		<li>Wide range of HPC facilities available to UK researchers</li>
+		<li>Different access mechanisms for different research areas</li>
+		<li>EPCC can support your research in a number of ways - please get in touch!</li>
+		<li>HPC Champions and RSE network also available for help and support</li>
+		<li>Benchmark data  available to help you choose the right service</li>
+	</ul>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: false,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
