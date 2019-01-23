@@ -7,6 +7,9 @@ p {
 ul {
    font-size: 0.75em;
 }
+ul.inner {
+   font-size: 0.75em;
+}
 dl {
    display: block;
    float: left;
