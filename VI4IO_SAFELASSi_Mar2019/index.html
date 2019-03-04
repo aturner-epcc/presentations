@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Analysis of I/O usage on the ARCHER UK National Supercomputing Service</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>I/O usage on ARCHER</h1>
+	<p>Andy Turner, EPCC<br/>
+	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
+	<img class="plain" src="../img/epcc_logo.png" />
+</section>
+
+<section>
+
+	<img class="plain" src="../img/cc_licence.png"/>
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+		<h3>Acknowledgements</h3>
+		<hr/>
+		<ul>
+			<li><strong>EPCC:</strong> Dominic Sloan-Murphy, David Henty, Alan Simpson</li>
+			<li><strong>Cray:</strong> Karthee Sivalingam, Harvey Richardson</li>
+			<li><strong>University of Reading:</strong> Julian Kunkel</li>
+			<li><strong>ARCHER Funding:</strong> EPSRC and NERC</li>
+		</ul>
+	</section>
+
+<section>
+	<h2>Overview</h2>
+	<hr/>
+	<ul>
+		<li><a href="#/why">Motivation</a></li>
+		<li><a href="#/what">Methodology</a></li>
+		<li><a href="#/results">Results</a></li>
+		<li><a href="#/next">Next steps</a></li>
+		<li><a href="#/summary">Summary</a></li>
+	</ul>
+</section>
+
+
+<!-- Intro Section ------------------------------------------------------------------------ -->
+
+<section>
+	<section id="why">
+		<h2>Motivation</h2>
+	</section>
+
+	<section>
+		<h3>Users</h3>
+		<hr/>
+		<p>High-level IO metrics on a per-job basis</p>
+		<ul>
+			<li>Better understanding of the different IO requirements of different jobs</li>
+			<li>Help identify any issues or performance bottlenecks</li>
+			<li>More effectively plan their research workflow</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Service</h3>
+		<hr/>
+		<p>High-level IO mertics assessed statistically across the service</p>
+		<ul>
+			<li>Overall view of IO usage of the service</li>
+			<li>Better understanding of IO requirements of different user groups</li>
+			<li>Assist IO resource planning and setup</li>
+			<li>Trend analysis and design of future services</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section id="what">
+		<h2>Requirements</h2>
+		<img class="plain" src="img_local/requirements.gif" alt="Dilbert requirements" />
+		<p><a href="https://dilbert.com/strip/2002-04-04">https://dilbert.com/strip/2002-04-04</a></p>
+	</section>
+
+	<section>
+		<h3>IO Metrics</h3>
+		<hr/>
+		<ul>
+			<li>High-level read and write data on a per job basis: data and ops</li>
+			<li>Routinely collected with no intervention from user</li>
+			<li>No or little impact on job performance</li>
+			<li>Ability to examine particular jobs in more detail if required</li>
+		</ul>
+		<p>Cray LASSi tool meets these requirements (see talk from Karthee later today)</p>
+	</section>
+
+	<section>
+		<h3>Reporting and Anaysis</h3>
+		<hr/>
+		<ul>
+			<li>Provide reporting interface to users to inspect IO metrics</li>
+			<li>Link per-job IO data to metadata (research area, application, etc.)</li>
+			<li>Ability to perform statistical analyses across different periods and classifiers</li>
+			<li>Flexibility to provide different analyses as requirements evolve</li>
+		</ul>
+		<p>EPCC SAFE meets these requirements</p>
+	</section>
+
+	<section>
+		<h3>Combining LASSi and SAFE</h3>
+		<hr/>
+		<ul>
+			<li>SAFE designed to take many different data feeds: LASSi feed configured</li>
+			<li>Import historical LASSi data and setup regular feed from LASSi</li>
+			<li>Link LASSi data to other sources (ALPS, PBS, project/user management)</li>
+			<li>Write reports to analyse overall use by different classifiers</li>
+		</ul>
+	</section>
+
+</section>
+
+<!-- results Section ------------------------------------------------------------------------ -->
+
+<section>
+	<section id="results">
+		<h2>Results</h2>
+		<img class="plain" src="img_local/correlation.png" alt="XKCD Correlation and Causation" />
+		<p><a href="https://xkcd.com/552/">https://xkcd.com/552/</a></p>
+	</section>
+
+	<section>
+		<h3>Notes</h3>
+		<hr/>
+		<ul>
+			<li>Analysis period: July - December 2018</li>
+			<li>All jobs that ran for more than 5 minutes included</li>
+			<li>LASSi samples IO from all jobs once every 3 minutes</li>
+			<li>Only covers accesses to Lustre file system</li>
+			<li>Only data amounts/rates reported - analysis of I/O ops to follow</li>
+			<li>Research areas identified by project membership</li>
+			<li>Initial analysis - lots still to do!</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Overall Read Rates</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/read_full.png" alt="Overall read rate over period" />
+	</section>
+
+	<section>
+		<h3>Overall Write Rates</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/write_full.png" alt="Overall write rate over period" />
+	</section>
+
+	<section>
+		<h3>Overall Write Rates (zoomed)</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/write_zoom.png" alt="Overall write rate over period" />
+	</section>
+
+	<section>
+		<h3>Overall I/O distribution (by data)</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_all.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>Overall I/O distribution (by rate)</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_rate_all.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>I/O distribution: Materials Science</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_e05.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>I/O distribution: Climate Modelling</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_n02.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>I/O distribution: Ocean Modelling</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_n01.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>I/O distribution: CFD</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_e01.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>I/O distribution: Biomolecular Modelling</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_e280.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>Overall I/O distribution (by data)</h3>
+		<hr/>
+		<img class="plain" height="500" src="img_local/io_3Q4Q2018_use_all.png" alt="I/O distribution by data size and job size" />
+	</section>
+	<section>
+		<h3>Overview</h3>
+		<hr/>
+		<ul>
+			<li>Three broad patterns of workflow observed:
+				<ul class="inner">
+					<li>Read small, write small: seen for materials science research</li>
+					<li>Read small, write medium: seen for biomolecular modelling</li>
+					<li>Read large, write large: seen for grid-based modelling (CFD, climate/ocean modelling)</li>
+				</ul></li>
+			<li>Climate/ocean pattern more tightly constrained than CFD, potentially due to more limited length and time scales</li>
+		</ul>
+	</section>
+
+</section>
+
+<section>
+	<h3>Next Steps</h3>
+	<hr/>
+	<ul>
+		<li>Look at IO operations (in addition to data read/write)</li>
+		<li>Analysis by application</li>
+		<li>Produce standard reports for users to examine their own IO</li>
+		<li>Feedback IO analysis to service management</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Summary</h3>
+	<hr/>
+	<ul>
+		<li>Combination of LASSi and SAFE provides a powerful tool for analysing IO use on national HPC service</li>
+		<li>Initial analysis has identified a small number of IO workflow patterns that dominate the use of the service</li>
+		<li>Mean rates and total data metrics are strongly correlated due to consistent length of jobs</li>
+		<li>Lots of work still to do!</li>
+	</ul>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
