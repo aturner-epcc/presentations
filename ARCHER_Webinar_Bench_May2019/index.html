@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Open Source HPC Benchmarking: 30 Oct 2018</title>
+		<title>Open Source HPC Benchmarking: 22 May 2019</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/white.css">
@@ -30,7 +30,7 @@
 <section>
 	<h1>Open Source HPC Benchmarking</h1>
 	<p>Andy Turner, EPCC<br/>
-	15 Nov 2018<br/>
+	22 May 2019<br/>
 	<a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a></p>
 	
 	<img class="plain" src="img_local/epcc_logo.png"/>
@@ -113,11 +113,11 @@
 		<h3>Audience: users and service personnel</h3>
 		<hr/>
 		<ul>
-			<li class="fragment">Give researchers information required to choose best service for their research</li>
+			<li class="fragment">Give researchers information required to choose right services for their research</li>
 			<li class="fragment">Allow service staff to understand their service performance and help plan procurements</li>
 		</ul>
 		<hr class="fragment"/>
-		<p class="fragment">Benchmarks should aim to test full software with realistic use cases</p>
+		<p class="fragment">Benchmarks should aim to test full software package with realistic use cases</p>
 	</section>
 
 	<section>
@@ -191,6 +191,12 @@
 	</section>
 
 	<section>
+		<h3>Multinode performance: CASTEP</h3>
+		<hr/>
+		<img class="plain" src="img_local/CASTEP_AlSlab_perf.png" alt="Plot of CASTEP performance"/>
+	</section>
+
+	<section>
 		<h3>Single node performance: GROMACS</h3>
 		<hr/>
 		<table style="font-size: 0.5em">
@@ -209,53 +215,36 @@
 			<tr>
 				<td>Cirrus</td>
 				<td>2x Intel Xeon E5-2695v4 (18 core)</td>
-				<td>1.699</td>
-				<td>1.397</td>
+				<td>1.918</td>
+				<td>1.577</td>
 			</tr>
 			<tr>
 				<td>Tesseract</td>
 				<td>2x Intel Xeon Silver 4116 (12 core)</td>
-				<td>1.216</td>
-				<td>1.088</td>
+				<td>1.326</td>
+				<td>1.090</td>
 			</tr>
 			<tr>
 				<td>Peta4-Skylake</td>
 				<td>2x Intel Xeon Gold 6142 (16 core)</td>
-				<td>2.082</td>
-				<td>1.712</td>
+				<td>2.503</td>
+				<td>2.058</td>
 			</tr>
 			<tr>
 				<td>Isambard</td>
 				<td>2x Arm Cavium ThunderX2 (32 core)</td>
-				<td>1.471</td>
-				<td>1.201</td>
+				<td>1.250</td>
+				<td>1.028</td>
 			</tr>
 			<tr>
 				<td>Wilkes2-GPU</td>
 				<td>4x NVidia V100 (PCIe)</td>
-				<td>2.774</td>
-				<td>2.257</td>
+				<td>2.963</td>
+				<td>2.437</td>
 			</tr>
 		</table>
 	</section>
-
-	<section>
-		<h3>Multinode performance: CASTEP</h3>
-		<hr/>
-		<img class="plain" src="img_local/CASTEP_AlSlab_perf.png" alt="Plot of CASTEP performance"/>
-	</section>
-
-	<section>
-		<h3>I/O parallel write bandwidth: benchio</h3>
-		<hr/>
-		<img class="plain" src="img_local/benchio_write_bw_small.png" alt="Plot of write bandwidth"/>
-	</section>
-
-	<section>
-		<h3>I/O parallel MDS performance: mdtest</h3>
-		<hr/>
-		<img class="plain" height="450" src="img_local/mdtest_mp-mf-sd_large.png" alt="Plot of MDS performace"/>
-	</section>
+	
 </section>
 
 <section>
@@ -272,46 +261,28 @@
 </section>
 	
 <section>
-	<img class="plain" src="img_local/rse_banner.png" alt="Research Software Engineers banner" />
-
-	<p>Campaigning for the recognition of the RSE role, creating a community of RSE's and 
-		organising events for RSE's to meet, exchange knowledge and collaborate.</p>
-
-	<p>Join the community!</p>
-
-	<p><a href="http://www.rse.ac.uk">http://www.rse.ac.uk</a>|
-	<a href="http://www.society-rse.org">http://www.society-rse.org</a></p>
-</section>
-
-<section>
-	<h3>HPC Europa 3: Transnational access programme</h3>
-	<hr/>
-	<p style="font-size: 0.75em">EC-funded collaborative research visits using HPC</p>
-	<div class="lblock">
-		<ul class="smaller">
-			<li>Applicants can be any level: masters to professors</li>
-			<li>Visit duration is from 2 to 13 weeks</li>
-			<li>Funding for travel and accommodation / living expenses</li>
-			<li>Includes access to world-class HPC facilities</li>
-			<li>Training and support provided</li>
-			<li>Researchers in UK can be visitors or hosts</li>
-			<li>Easy application procedure: 4 closing dates per year – apply any time</li>
-		</ul>
-	</div>
-	<div class="rblock">
-		<img class="plain" src="img_local/hpce3_map.png" alt="HPC Europa 3 map"/>
-	</div>
-	<p><a href="http://www.hpc-europa.org/">http://www.hpc-europa.org/</a></p>
-</section>
-
-
-<section>
 	<img class="plain" src="img_local/hpcuk_logo.png" alt="HPC-UK logo" />
 
 	<p>Information on facilities and how to access them</p>
 	<p><a href="http://www.hpc-uk.ac.uk">http://www.hpc-uk.ac.uk</a></p>
 
 	<p>Open Source, community-developed resource</p>
+</section>
+
+<section>
+	<h3>Benchmark Performance Reports</h3>
+	<hr/>
+	<p>
+		Performance of HPC Benchmarks across UK National HPC services<br/>
+		A Turner, EPCC, The University of Edinburgh<br/>
+		J Salmond, University of Cambridge<br/>
+		<a href="https://edin.ac/2Q1m7ot">https://edin.ac/2Q1m7ot</a>
+	</p>
+	<p>
+		Single Node Performance of HPC Benchmarks across UK National HPC services<br/>
+		A Turner, EPCC, The University of Edinburgh<br/>
+		<a href="https://edin.ac/2w8DCuW">https://edin.ac/2w8DCuW</a>
+	</p>
 </section>
 
 			</div>
