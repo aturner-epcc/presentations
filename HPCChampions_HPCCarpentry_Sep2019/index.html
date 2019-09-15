@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HPC Carpentry: HPC Champions, 16 September 2019</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="../css/local.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+<!-- Start of presentation ------------------------------------------------------------------------ -->
+<section>
+	<h1>HPC Carpentry</h1>
+	<hr/>
+	<p>Andy Turner: <a href="mailto:a.turner@epcc.ed.ac.uk">a.turner@epcc.ed.ac.uk</a><br />
+	EPCC, The University of Edinburgh<br/>
+	16 September 2019</p>
+	<a href="http://www.carpentries.org"><img class="plain" width="400" src="img_local/TheCarpentries.png" /></a>
+	<a href="http://www.epcc.ed.ac.uk"><img class="plain" width="300" src="../img/epcc_logo.png"/></a>
+	
+</section>
+
+<section>
+
+	<img class="plain" src="../img/cc_licence.png"/>
+	<p>Slide content is available under under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        <p style="font-size: 0.35em">This means you are free to copy and redistribute the material and adapt
+		and build on the material under the following terms: You must give appropriate credit, provide
+		a link to the license and indicate if changes were made. If you adapt or build on the material
+		you must distribute your work under the same license as the original.<br/>
+		Note that this presentation contains images owned by others. Please seek their permission
+		before reusing these images.</p>
+
+	<p>Built using <a href="https://github.com/hakimel/reveal.js">reveal.js</a></p>
+	<p style="font-size: 0.35em">reveal.js is available under the
+		<a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE">MIT licence</a></p>
+
+</section>
+
+<section>
+
+<section>
+
+	<section>
+		<h2>What is HPC Carpentry?</h2>
+	</section>
+
+	<section>
+		<h3>Goals</h3>
+	<hr/>
+		<p class="fragment">Apply the Carpentry model for HPC training</p>
+		<p class="fragment">Open-source, community-designed training</p>
+		<p class="fragment">Easy to adapt for different systems</p>
+		<p class="fragment">Accessible to different audiences</p>
+	</section>
+
+	<section>
+		<h3>Initial learner profile</h3>
+	<hr/>
+
+		<ul style="font-size: 0.75em">
+			<li class="fragment">I am not sure how HPC can help my research?</li>
+			<li class="fragment">I do not have the basic technical skills to use HPC.</li>
+			<li class="fragment">Just give me what I need to get on with my research on HPC.</li>
+			<li class="fragment">What is an HPC system anyway? How does it differ from the computer I am already using? What about “the Cloud”?</li>
+			<li class="fragment">How do I get help and/or help myself when I get stuck?</li>
+			<li class="fragment">I feel unsure and out of my depth with HPC.</li>
+			<li class="fragment">I do not understand the shared nature of HPC systems.</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Topics</h3>
+	<hr/>
+		<ul style="font-size: 0.75em">
+			<li class="fragment">Why use HPC?</li>
+			<li class="fragment">Login and transferring data</li>
+			<li class="fragment">Understanding HPC jargon</li>
+			<li class="fragment">Basic understanding of HPC architectures and practical implications for their use</li>
+			<li class="fragment">File systems on HPC systems</li>
+			<li class="fragment">In-terminal text editors</li>
+			<li class="fragment">modules, environment, applications</li>
+			<li class="fragment">The scheduler and writing job submission scripts</li>
+			<li class="fragment">Shared system etiquette</li>
+			<li class="fragment">Troubleshooting strategies</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>What about teaching the shell??</h3>
+	<hr/>
+
+		<p class="fragment">There has been a lot of discussion about this!</p>
+		<ul style="font-size: 0.75em">
+			<li class="fragment">Whether this is needed or not depends on the particular audience</li>
+			<li class="fragment">HPC Carpentry is using a modular approach to add the flexibility required (more later).</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Challenges</h2>
+	</section>
+
+	<section>
+		<h3>System differences</h3>
+	<hr/>
+
+		<ul style="font-size: 0.7em">
+			<li class="fragment">Need to be easy to incorporate with minimal editing</li>
+			<li class="fragment">Plan to do this automatically as much as possible</li>
+			<li class="fragment">Set a configuration option once and it will be built with the correct setup</li>
+			<li class="fragment">As the community grows, more system types will be available</li>
+			<li class="fragment">(Could also be used to provide different research community flavours of the material.)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Range of learner experience</h3>
+	<hr/>
+
+		<ul style="font-size: 0.7em">
+			<li class="fragment">Wide range of different backgrounds
+				<ul>
+					<li class="fragment">Could be grouped by ability or research area</li>
+				</ul></li>
+			<li class="fragment">Flexibility required in topics&hellip;but need to maintain coherency and avoid maintenance overhead</li>
+			<li class="fragment">Plan to use a modular approach with recommended configurations</li>
+		</ul>
+	</section>
+
+</section>
+
+<section>
+
+	<section>
+		<h2>Status and Plans</h2>
+	</section>
+
+	<section>
+		<h3>Original instances</h3>
+	<hr/>
+
+		<h4>hpc-intro</h4>
+		<p>Produced by Compute Canada</p>
+		<h4>hpc-in-a-day</h4>
+		<p>Produced by Peter Steinbach</p>
+	</section>
+
+	<section>
+		<table style="font-size: 0.7em">
+			<tr>
+				<th>Topic</th>
+				<th>hpc-intro</th>
+				<th>hpc-in-a-day</th>
+			</tr>
+			<tr class="fragment">
+				<td>bash Shell</td>
+				<td>&check;</td>
+				<td>&cross;</td>
+			</tr>
+			<tr class="fragment" style="background: #eee;">
+				<td>Why HPC?</td>
+				<td>&check;</td>
+				<td>&check;</td>
+			</tr>
+			<tr class="fragment" style="background: #eee;">
+				<td>Login, data transfer</td>
+				<td>&check;</td>
+				<td>&check;</td>
+			</tr>
+			<tr class="fragment" style="background: #eee;">
+				<td>Software modules</td>
+				<td>&check;</td>
+				<td>&check;</td>
+			</tr>
+			<tr class="fragment" style="background: #eee;">
+				<td>Scheduler</td>
+				<td>&check;</td>
+				<td>&check;</td>
+			</tr>
+			<tr class="fragment" style="background: #eee;">
+				<td>File systems</td>
+				<td>&check;</td>
+				<td>&check;</td>
+			</tr>
+			<tr class="fragment" style="background: #eee;">
+				<td>Shared system etiquette</td>
+				<td>&check;</td>
+				<td>&check;</td>
+			</tr>
+			<tr class="fragment">
+				<td>Parallelism and profiling</td>
+				<td>&cross;</td>
+				<td>&check;</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<section>
+		<h3>Modularisation</h3>
+	<hr/>
+	
+		<p>Half-day modules:</p>
+		<ul style="font-size: 0.7em">
+			<li class="fragment">hpc-shell: Introduction to bash (based on hpc-intro)</li>
+			<li class="fragment">hpc-intro: All other topics from hpc-intro
+				<ul>
+					<li class="fragment">Merge in relevant material from hpc-in-a-day</li>
+					<li class="fragment">Merge in contributions from CarpentryCon 2018</li>
+				</ul></li>
+			<li class="fragment">Others (from original Compute Canada material):
+				<ul>
+					<li>hpc-python-novice: Introduction to using Python on HPC systems (based on hpc-python)</li>
+			        <li>hpc-python-pipeline: Using Python for computational pipelines on HPC systems (based on hpc-python)</li>
+				</ul></li>
+			<li class="fragment">Potential to add additional modules if other topics are required.</li>
+		</ul>
+		<p class="fragment">Initial release of this structure available since late 2018</p>
+	</section>
+
+
+	<section>
+		<h3>Automation</h3>
+	<hr/>
+
+		<ul style="font-size: 0.7em">
+	 		<li class="fragment">hpc-in-a-day includes technology to switch between different systems, login
+				hosts and schedulers by setting config options
+				<ul>
+					<li>Uses Jekyll/Liquid (<a href="https://jekyllrb.com/">https://jekyllrb.com/</a>) features</li>
+				</ul></li>
+			<li class="fragment">Currently working to incorporate this into hpc-intro (should be available by end Oct 2019)</li>
+			<li class="fragment">Could expand this technology to allow automatic switching of other things, for example:
+				<ul class="fragment">
+					<li>Examples from particular research areas</li>
+					<li>Different file system setups</li>
+				</ul></li>
+		</ul>
+				
+	</section>
+
+	<section>
+		<h3>Governance</h3>
+	<hr/>
+
+		<ul style="font-size: 0.7em">
+			<li class="fragment">Group of maintainers has been formed</li>
+			<li class="fragment">Guidance on using HPC Carpentry lessons drafted</li>
+			<li class="fragment">Policy on accepting contributions drafted</li>
+		</ul>
+	</section>
+
+	<section>
+		<h3>Canonical locations</h3>
+	<hr/>
+
+		<ul style="font-size: 0.7em">
+			<li class="fragment">Website: <a href="https://hpc-carpentry.github.io/">https://hpc-carpentry.github.io/</a></li>
+			<li class="fragment">Discussion: <a href="https://carpentries.topicbox.com/groups/discuss-hpc">https://carpentries.topicbox.com/groups/discuss-hpc</a></li>
+			<li class="fragment">Repos: <a href="https://www.github.com/hpc-carpentry">https://www.github.com/hpc-carpentry</a></li>
+		</ul>
+
+	</section>
+</section>
+
+<section>
+
+	<section>
+		<h2>Getting Involved</h2>
+	</section>
+
+	<section>
+		<h3>Teach</h3>
+	<hr/>
+
+		<p>Use the HPC Carpentry material and teach it!</p>
+
+		<p class="fragment">Then provide feedback on how it can be improved</p>
+		<p style="font-size: 0.7em" class="fragment"> ps. Don't forget to tell the HPC Carpentry that you are planning to teach it!</p>
+	</section>
+
+	<section>
+		<h3>Develop</h3>
+	<hr/>
+
+		<p>Get involved in developing HPC Carpentry</p>
+
+		<p class="fragment">Join and contribute to the mailing list</p>
+		<p class="fragment">Contribute to the repository (content and/or issues)</p>
+	</section>
+
+	<section>
+		<h3>Maintain</h3>
+	<hr/>
+
+		<p>Help us maintain HPC Carpentry</p>
+
+		<p class="fragment">Let <a href="mailto:maintainers-hpc@lists.carpentries.org">maintainers-hpc@lists.carpentries.org</a> know you are
+		interested.</p>
+	</section>
+
+
+</section>
+
+<section>
+	<ul>
+		<li>Teach: use the material</li>
+		<li>Develop: contribute material</li>
+		<li>Maintain: help organise</li>
+	</uk>
+
+	<hr/>
+	<p><a href="https://hpc-carpentry.github.io/">https://hpc-carpentry.github.io/</a></p>
+	<p><a href="https://carpentries.topicbox.com/groups/discuss-hpc">https://carpentries.topicbox.com/groups/discuss-hpc</a></p>
+	<hr/>
+	<p style="font-size: 0.6em"><a href="https://aturner-epcc.github.io/presentations/SIGHPC_HPC_Carpentry_Jul2018/">https://aturner-epcc.github.io/presentations/SIGHPC_HPC_Carpentry_Jul2018/</a></p>
+</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

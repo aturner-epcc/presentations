@@ -2,6 +2,7 @@
 
 ## 2019
 
+* [HPC Carpentry, HPC Champions, RSECon19, 16 Sep 2019](HPCChampions_HPCCarpentry_Sep2019)
 * [Open Source Benchmarking, ARCHER Webinar, 22 May 2019](ARCHER_Webinar_Bench_May2019)
 * [Storage Challenges in the UK, University of Reading, 6 Mar 2019](VI4IO_SAFELASSi_Mar2019)
 * [UK HPC Facilities, CCP9/MCC/UKCP Workshop, 22 Jan 2019](CCP9_DL_UK_Facilities_Jan2019)
